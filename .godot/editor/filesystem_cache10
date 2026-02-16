@@ -1,0 +1,11 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1771272782
+::res://Assets/::1771272811
+::res://Assets/Imagens/::1771273601
+player-dev-texture.png::CompressedTexture2D::965850911463564649::1771273601::1771273601::1::::<><><>0<>0<>ca4f0ec54ea0630da4a802d12f87947e<>res://.godot/imported/player-dev-texture.png-9be1a36e762f3d15ebb24cc6192a53a8.ctex::
+::res://Assets/Musica/::1771272811
+::res://Scenes/::1771274538
+jogo.tscn::PackedScene::2225139109433068709::1771273097::0::1::::<><><>0<>0<><>::
+player.tscn::PackedScene::6777906534730535306::1771274697::0::1::::<><><>0<>0<><>::uid://ds32ijasnvy3d::::res://Scenes/player.gd<>uid://n04onpjvd5ub::::res://Assets/Imagens/player-dev-texture.png
+player.gd::GDScript::8482117932379708883::1771273734::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Scripts/::1771272715
