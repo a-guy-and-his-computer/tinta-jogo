@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var VELOCIDADE = 300.0
 @export var VELOCIDADE_NO_AR = 200.0
 @export var VELOCIDADE_PULO = -400.0
+@export var ACELERACAO = 400.0
+@export var ACELERACAO_NO_AR = 400.0
 @export var FRICCAO = 300.0
 @export var FRICCAO_NO_AR = 200.0
 
@@ -12,14 +14,14 @@ extends CharacterBody2D
 @onready var wall_jump_timer: Timer = $WallJumpTimer
 
 func _physics_process(delta: float) -> void:
-	print(velocity)
+	print(get_wall_normal())
 	aplicar_gravidade(delta)
 	manusear_wall_jump()
 	manusear_pulo()
 
 	var direcao := Input.get_axis("esquerda", "direita")
-	aplicar_aceleracao(direcao)
-	aplicar_aceleracao_no_ar(direcao)
+	aplicar_aceleracao(direcao, delta)
+	aplicar_aceleracao_no_ar(direcao, delta)
 	aplicar_friccao(direcao)
 	aplicar_friccao_no_ar(direcao)
 	
@@ -40,7 +42,8 @@ func aplicar_gravidade(delta):
 
 func manusear_wall_jump():
 	if Input.is_action_just_pressed("pular") and (is_on_wall() and not is_on_floor()):
-		velocity = Vector2(VELOCIDADE * get_wall_normal().x, VELOCIDADE_PULO / 2)
+		velocity.x = get_wall_normal().x * VELOCIDADE
+		velocity.y = VELOCIDADE_PULO / 2
 
 
 func manusear_pulo():
@@ -50,14 +53,14 @@ func manusear_pulo():
 		velocity.y = VELOCIDADE_PULO
 
 
-func aplicar_aceleracao(direcao):
+func aplicar_aceleracao(direcao, delta):
 	if direcao and is_on_floor():
-		velocity.x = direcao * VELOCIDADE
+		velocity.x = move_toward(velocity.x, direcao * VELOCIDADE, ACELERACAO * delta)
 
 
-func aplicar_aceleracao_no_ar(direcao):
+func aplicar_aceleracao_no_ar(direcao, delta):
 	if direcao and not is_on_floor():
-		velocity.x = direcao * VELOCIDADE_NO_AR
+		velocity.x = move_toward(velocity.x, direcao * VELOCIDADE_NO_AR, ACELERACAO_NO_AR * delta)
 
 
 func aplicar_friccao(direcao):
