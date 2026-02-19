@@ -1,4 +1,14 @@
-CharacterBody2D
+StaticBody2D
+Polygon2D
+CollisionPolygon2D
+RayCast2D
 Timer
 CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
+TileMapLayer
+TileMap
+Button
+Label
 Sprite2D
+RigidBody2D

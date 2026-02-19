@@ -1,29 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3tjeox1cjs71"]
+[gd_scene load_steps=5 format=3 uid="uid://c3tjeox1cjs71"]
 
-[ext_resource type="Script" uid="uid://ds32ijasnvy3d" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://c20g6lulfpgnk" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://n04onpjvd5ub" path="res://Assets/Imagens/player-dev-texture.png" id="1_v0iea"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(7.273, 10.667)
+[sub_resource type="SpriteFrames" id="SpriteFrames_6t5aa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v0iea")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
+size = Vector2(8, 16)
 
 [node name="Player" type="CharacterBody2D"]
-floor_snap_length = 3.0
+scale = Vector2(3, 3)
+floor_constant_speed = true
+floor_snap_length = 4.0
 script = ExtResource("1_cvnsp")
+VELOCIDADE = 200.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
-texture = ExtResource("1_v0iea")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
-rotation = 3.1415925
-scale = Vector2(1.1, -1.5)
-shape = SubResource("RectangleShape2D_cvnsp")
+shape = SubResource("RectangleShape2D_vgqql")
 
-[node name="PuloCoioteTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
+[node name="PuloCoyoteTimer" type="Timer" parent="."]
 
 [node name="WallJumpTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 8)
+target_position = Vector2(0, 1.5)
