@@ -1,56 +1,113 @@
 extends CharacterBody2D
 
+enum Estados {NO_AR, NO_CHAO, NA_PAREDE}
+var estado_player = Estados.NO_AR
+var ACABOU_DE_PULAR = false
+var PULOU_DA_PAREDE = false
 
 @export var VELOCIDADE = 300.0
-@export var VELOCIDADE_NO_AR = 200.0
+@export var VELOCIDADE_FORA_DO_CHAO = 200.0
 @export var VELOCIDADE_PULO = -400.0
 @export var ACELERACAO = 400.0
-@export var ACELERACAO_NO_AR = 400.0
 @export var FRICCAO = 300.0
-@export var FRICCAO_NO_AR = 200.0
+@export var FRICCAO_FORA_DO_CHAO = 200.0
 
-@onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var buffer_pulo_raycast: RayCast2D = $BufferPuloRaycast
 @onready var pulo_coyote_timer: Timer = $PuloCoyoteTimer
 @onready var wall_jump_timer: Timer = $WallJumpTimer
 
 func _physics_process(delta: float) -> void:
-	print(get_wall_normal())
-	aplicar_gravidade(delta)
-	manusear_wall_jump()
-	manusear_pulo()
-
 	var direcao := Input.get_axis("esquerda", "direita")
-	aplicar_aceleracao(direcao, delta)
-	aplicar_aceleracao_no_ar(direcao, delta)
-	aplicar_friccao(direcao)
-	aplicar_friccao_no_ar(direcao)
+	var estava_no_chao = !is_on_floor() # iniciando variável
+	var normal_da_ultima_parede = get_wall_normal() # iniciando variável
+	var estava_na_parede = !is_on_wall() # iniciando variável
+	var descer_devagar = false # iniciando variável
 	
-	# checar se está na parede
-	# checar se está no chão
+	match estado_player:
+		Estados.NO_AR:
+			if is_on_floor():
+				estado_player = Estados.NO_CHAO
+			
+			elif is_on_wall():
+				estado_player = Estados.NA_PAREDE
+				
+			else:
+				if pulo_coyote_timer.time_left > 0 and Input.is_action_just_pressed("pular"):
+					aplicar_pulo()
+					print("coyote")
+					pulo_coyote_timer.stop()
+				
+				elif wall_jump_timer.time_left > 0 and Input.is_action_just_pressed("pular"):
+					aplicar_wall_jump(normal_da_ultima_parede)
+					print("wall")
+					wall_jump_timer.stop()
+				
+				aplicar_gravidade(delta, descer_devagar)
+				aplicar_aceleracao_fora_do_chao(direcao, delta)
+				aplicar_friccao_fora_do_chao(direcao)
+				buffer_pulo()
+		
+		Estados.NO_CHAO:
+			if not is_on_floor():
+				estado_player = Estados.NO_AR
+			
+			else:
+				PULOU_DA_PAREDE = false
+				ACABOU_DE_PULAR = false
+				aplicar_aceleracao(direcao, delta)
+				aplicar_friccao(direcao)
+				aplicar_pulo()
+		
+		Estados.NA_PAREDE:
+			if is_on_floor():
+				estado_player = Estados.NO_CHAO
+			
+			elif not is_on_wall():
+				estado_player = Estados.NO_AR
+			
+			else:
+				descer_devagar = true
+				normal_da_ultima_parede = get_wall_normal()
+				aplicar_gravidade(delta, descer_devagar)
+				aplicar_aceleracao_fora_do_chao(direcao, delta)
+				aplicar_friccao_fora_do_chao(direcao)
+				aplicar_wall_jump(normal_da_ultima_parede)
 
 	move_and_slide() # mova o personagem
 	
-	# checar se saiu da parede e estava na parede antes. Se sim, começe o timer de wall jump
+	if (estava_no_chao == is_on_floor()) and (not is_on_floor()):
+		pulo_coyote_timer.start()
 	
-	# checar se saiu do chão e estava no chão antes. Se sim, começe o timer de coyote
+	elif (estava_na_parede == is_on_wall()) and (not is_on_wall()):
+		wall_jump_timer.start()
 
 
-func aplicar_gravidade(delta):
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+
+func aplicar_gravidade(delta, descer_devagar):
+	if descer_devagar == true:
+		velocity.y = clamp(velocity.y, -1000000, 100)
+	
+	velocity += get_gravity() * delta
 
 
-func manusear_wall_jump():
-	if Input.is_action_just_pressed("pular") and (is_on_wall() and not is_on_floor()):
-		velocity.x = get_wall_normal().x * VELOCIDADE
+func aplicar_wall_jump(normal_da_ultima_parede):
+	if Input.is_action_just_pressed("pular") and PULOU_DA_PAREDE == false:
+		velocity.x = normal_da_ultima_parede.x * VELOCIDADE
 		velocity.y = VELOCIDADE_PULO / 2
+		PULOU_DA_PAREDE = true
 
 
-func manusear_pulo():
-	if Input.is_action_just_pressed("pular") and is_on_floor():
+func aplicar_pulo():
+	if Input.is_action_just_pressed("pular") and ACABOU_DE_PULAR == false:
 		velocity.y = VELOCIDADE_PULO
-	elif Input.is_action_just_pressed("pular") and ray_cast_2d.is_colliding():
+		ACABOU_DE_PULAR = true
+		estado_player = Estados.NO_AR
+
+
+func buffer_pulo():
+	if Input.is_action_just_pressed("pular") and buffer_pulo_raycast.is_colliding():
 		velocity.y = VELOCIDADE_PULO
+		ACABOU_DE_PULAR = true
 
 
 func aplicar_aceleracao(direcao, delta):
@@ -58,9 +115,9 @@ func aplicar_aceleracao(direcao, delta):
 		velocity.x = move_toward(velocity.x, direcao * VELOCIDADE, ACELERACAO * delta)
 
 
-func aplicar_aceleracao_no_ar(direcao, delta):
+func aplicar_aceleracao_fora_do_chao(direcao, delta):
 	if direcao and not is_on_floor():
-		velocity.x = move_toward(velocity.x, direcao * VELOCIDADE_NO_AR, ACELERACAO_NO_AR * delta)
+		velocity.x = move_toward(velocity.x, direcao * VELOCIDADE_FORA_DO_CHAO, ACELERACAO * delta)
 
 
 func aplicar_friccao(direcao):
@@ -68,6 +125,9 @@ func aplicar_friccao(direcao):
 		velocity.x = move_toward(velocity.x, 0, FRICCAO)
 
 
-func aplicar_friccao_no_ar(direcao):
-	if !direcao and not is_on_floor():
-		velocity.x = move_toward(velocity.x, 0, FRICCAO_NO_AR)
+func aplicar_friccao_fora_do_chao(direcao):
+	if PULOU_DA_PAREDE and !direcao:
+		print("yipee")
+	
+	elif !direcao and not is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, FRICCAO_FORA_DO_CHAO)

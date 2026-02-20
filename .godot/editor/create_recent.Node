@@ -1,7 +1,8 @@
+RayCast2D
+Camera2D
 StaticBody2D
 Polygon2D
 CollisionPolygon2D
-RayCast2D
 Timer
 CollisionShape2D
 AnimatedSprite2D
@@ -11,4 +12,3 @@ TileMap
 Button
 Label
 Sprite2D
-RigidBody2D

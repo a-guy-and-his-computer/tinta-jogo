@@ -7,7 +7,7 @@
 script = ExtResource("1_h60hs")
 
 [node name="Player" parent="." instance=ExtResource("2_h60hs")]
-position = Vector2(310, 243.00002)
+position = Vector2(314, 178.00002)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
