@@ -13,6 +13,7 @@ var PULOU_DA_PAREDE = false
 @export var FRICCAO_FORA_DO_CHAO = 200.0
 
 @onready var buffer_pulo_raycast: RayCast2D = $BufferPuloRaycast
+
 @onready var pulo_coyote_timer: Timer = $PuloCoyoteTimer
 @onready var wall_jump_timer: Timer = $WallJumpTimer
 
@@ -66,6 +67,7 @@ func _physics_process(delta: float) -> void:
 				estado_player = Estados.NO_AR
 			
 			else:
+				PULOU_DA_PAREDE = false
 				descer_devagar = true
 				normal_da_ultima_parede = get_wall_normal()
 				aplicar_gravidade(delta, descer_devagar)
@@ -101,7 +103,6 @@ func aplicar_pulo():
 	if Input.is_action_just_pressed("pular") and ACABOU_DE_PULAR == false:
 		velocity.y = VELOCIDADE_PULO
 		ACABOU_DE_PULAR = true
-		estado_player = Estados.NO_AR
 
 
 func buffer_pulo():
