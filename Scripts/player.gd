@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 enum Estados {NO_AR, NO_CHAO, NA_PAREDE}
 var estado_player = Estados.NO_AR
-var ACABOU_DE_PULAR = false
 var PULOU_DA_PAREDE = false
 
 @export var VELOCIDADE = 300.0
@@ -12,7 +11,7 @@ var PULOU_DA_PAREDE = false
 @export var FRICCAO = 300.0
 @export var FRICCAO_FORA_DO_CHAO = 200.0
 
-@onready var buffer_pulo_raycast: RayCast2D = $BufferPuloRaycast
+@onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 
 @onready var pulo_coyote_timer: Timer = $PuloCoyoteTimer
 @onready var wall_jump_timer: Timer = $WallJumpTimer
@@ -43,6 +42,7 @@ func _physics_process(delta: float) -> void:
 					print("wall")
 					wall_jump_timer.stop()
 				
+				aplica_pulo_ajustavel()
 				aplicar_gravidade(delta, descer_devagar)
 				aplicar_aceleracao_fora_do_chao(direcao, delta)
 				aplicar_friccao_fora_do_chao(direcao)
@@ -54,10 +54,10 @@ func _physics_process(delta: float) -> void:
 			
 			else:
 				PULOU_DA_PAREDE = false
-				ACABOU_DE_PULAR = false
 				aplicar_aceleracao(direcao, delta)
 				aplicar_friccao(direcao)
 				aplicar_pulo()
+				aplica_pulo_ajustavel()
 		
 		Estados.NA_PAREDE:
 			if is_on_floor():
@@ -100,15 +100,18 @@ func aplicar_wall_jump(normal_da_ultima_parede):
 
 
 func aplicar_pulo():
-	if Input.is_action_just_pressed("pular") and ACABOU_DE_PULAR == false:
+	if Input.is_action_just_pressed("pular") and is_on_floor():
 		velocity.y = VELOCIDADE_PULO
-		ACABOU_DE_PULAR = true
+
+
+func aplica_pulo_ajustavel():
+	if Input.is_action_just_released("pular") and (velocity.y < 0 and velocity.y < VELOCIDADE_PULO / 4):
+		velocity.y = VELOCIDADE_PULO / 4
 
 
 func buffer_pulo():
-	if Input.is_action_just_pressed("pular") and buffer_pulo_raycast.is_colliding():
+	if Input.is_action_just_pressed("pular") and shape_cast_2d.is_colliding() and velocity.y > 0:
 		velocity.y = VELOCIDADE_PULO
-		ACABOU_DE_PULAR = true
 
 
 func aplicar_aceleracao(direcao, delta):

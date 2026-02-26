@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3tjeox1cjs71"]
+[gd_scene load_steps=6 format=3 uid="uid://c3tjeox1cjs71"]
 
 [ext_resource type="Script" uid="uid://c20g6lulfpgnk" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://n04onpjvd5ub" path="res://Assets/Imagens/player-dev-texture.png" id="1_v0iea"]
@@ -16,6 +16,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -38,10 +40,6 @@ one_shot = true
 wait_time = 0.271
 one_shot = true
 
-[node name="BufferPuloRaycast" type="RayCast2D" parent="."]
-position = Vector2(0, 8)
-target_position = Vector2(0, 1.5)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_bottom = 360
 drag_horizontal_enabled = true
@@ -51,3 +49,9 @@ drag_left_margin = 0.1
 drag_right_margin = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(0, 8.333334)
+scale = Vector2(0.4003, 0.04085348)
+shape = SubResource("RectangleShape2D_cvnsp")
+target_position = Vector2(0, 57.11467)
