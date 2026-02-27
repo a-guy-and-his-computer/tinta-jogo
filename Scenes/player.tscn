@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3tjeox1cjs71"]
+[gd_scene format=3 uid="uid://c3tjeox1cjs71"]
 
 [ext_resource type="Script" uid="uid://c20g6lulfpgnk" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://n04onpjvd5ub" path="res://Assets/Imagens/player-dev-texture.png" id="1_v0iea"]
@@ -19,29 +19,36 @@ size = Vector2(8, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=754391438]
 scale = Vector2(3, 3)
 floor_constant_speed = true
 floor_snap_length = 4.0
 script = ExtResource("1_cvnsp")
-VELOCIDADE = 200.0
+VELOCIDADE = 225.0
+VELOCIDADE_FORA_DO_CHAO = 240.0
+ACELERACAO = 380.0
+FRICCAO = 330.0
+FRICCAO_FORA_DO_CHAO = 160.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=969933900]
 sprite_frames = SubResource("SpriteFrames_6t5aa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014310914]
 shape = SubResource("RectangleShape2D_vgqql")
 
-[node name="PuloCoyoteTimer" type="Timer" parent="."]
-wait_time = 0.11
+[node name="PuloCoyoteTimer" type="Timer" parent="." unique_id=1441104588]
+wait_time = 0.124
 one_shot = true
 
-[node name="WallJumpTimer" type="Timer" parent="."]
+[node name="WallJumpTimer" type="Timer" parent="." unique_id=1193502378]
 wait_time = 0.271
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_bottom = 360
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1290086790]
+limit_left = -10000040
+limit_top = -10000025
+limit_right = 9999960
+limit_bottom = 378
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_vertical_offset = -0.2
@@ -50,7 +57,7 @@ drag_right_margin = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=225072420]
 position = Vector2(0, 8.333334)
 scale = Vector2(0.4003, 0.04085348)
 shape = SubResource("RectangleShape2D_cvnsp")

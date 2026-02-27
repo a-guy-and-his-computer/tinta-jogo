@@ -100,7 +100,7 @@ func aplicar_wall_jump(normal_da_ultima_parede):
 
 
 func aplicar_pulo():
-	if Input.is_action_just_pressed("pular") and is_on_floor():
+	if Input.is_action_just_pressed("pular") and (is_on_floor() or pulo_coyote_timer.time_left > 0):
 		velocity.y = VELOCIDADE_PULO
 
 

@@ -1,3 +1,7 @@
+Sprite2D
+ParallaxLayer
+ParallaxBackground
+TileMapLayer
 ShapeCast2D
 RayCast2D
 Camera2D
@@ -8,8 +12,3 @@ Timer
 CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
-TileMapLayer
-TileMap
-Button
-Label
-Sprite2D
