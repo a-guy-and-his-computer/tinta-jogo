@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg16bk8cc07em"
-path="res://.godot/imported/Girasol_move.png-6b83aeaa1ade23e6fa639d6672ea4f0f.ctex"
+uid="uid://3iqwvrcas7xm"
+path="res://.godot/imported/girassol (2).png-6909d183c3ec95b07f4e24f39eddf890.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/Girasol_move.png"
-dest_files=["res://.godot/imported/Girasol_move.png-6b83aeaa1ade23e6fa639d6672ea4f0f.ctex"]
+source_file="res://Assets/Imagens/girassol (2).png"
+dest_files=["res://.godot/imported/girassol (2).png-6909d183c3ec95b07f4e24f39eddf890.ctex"]
 
 [params]
 

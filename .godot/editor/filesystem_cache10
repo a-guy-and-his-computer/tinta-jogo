@@ -1,14 +1,14 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1772229098
+::res://::1772232110
 README.md::TextFile::-1::1772091992::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1772092051
-::res://Assets/Imagens/::1772231176
+::res://Assets/Imagens/::1772233437
 Ceul.png::CompressedTexture2D::5872362970821207820::1772230702::1772230703::1::::<><><>0<>0<>4b4aa1fb749f3488fdb26bb14fb2c75c<>res://.godot/imported/Ceul.png-36f3f89c35d6fb5e1742b9d2d2d9217b.ctex::
-Girasol_move.png::CompressedTexture2D::7635953523389327356::1772231176::1772231177::1::::<><><>0<>0<>d3fbd6dc7d22c50e659af152efadca87<>res://.godot/imported/Girasol_move.png-6b83aeaa1ade23e6fa639d6672ea4f0f.ctex::
+girassol (2).png::CompressedTexture2D::1982814532591200298::1772233437::1772233438::1::::<><><>0<>0<>659ed6b3601cb6fc3e3b1be10d8f30c8<>res://.godot/imported/girassol (2).png-6909d183c3ec95b07f4e24f39eddf890.ctex::
 parku socorro.png::CompressedTexture2D::1417045182619931378::1772229413::1772229414::1::::<><><>0<>0<>6ff097ee7e3b30038509c946e876ade2<>res://.godot/imported/parku socorro.png-ab60215037cd1aec0fd58c54a32a29a2.ctex::
 player-dev-texture.png::CompressedTexture2D::965850911463564649::1772091993::1772210407::1::::<><><>0<>0<>ca4f0ec54ea0630da4a802d12f87947e<>res://.godot/imported/player-dev-texture.png-9be1a36e762f3d15ebb24cc6192a53a8.ctex::
-::res://Scenes/::1772230373
-jogo.tscn::PackedScene::2225139109433068709::1772230343::0::1::::<><><>0<>0<><>::uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://c3tjeox1cjs71::::res://Scenes/player.tscn
+::res://Scenes/::1772233144
+jogo.tscn::PackedScene::2225139109433068709::1772233144::0::1::::<><><>0<>0<><>::uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://c3tjeox1cjs71::::res://Scenes/player.tscn<>uid://cgppajfb2c3l7::::res://Assets/Imagens/gira.png
 player.tscn::PackedScene::6777906534730535306::1772230373::0::1::::<><><>0<>0<><>::uid://c20g6lulfpgnk::::res://Scripts/player.gd<>uid://n04onpjvd5ub::::res://Assets/Imagens/player-dev-texture.png
 ::res://Scripts/::1772226642
 jogo.gd::GDScript::610045412691847154::1772226642::0::1::::<>RefCounted<><>0<>0<><>::
