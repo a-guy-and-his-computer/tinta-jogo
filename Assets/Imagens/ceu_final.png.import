@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3iqwvrcas7xm"
-path="res://.godot/imported/girassol (2).png-6909d183c3ec95b07f4e24f39eddf890.ctex"
+uid="uid://c0eorbqumvoaa"
+path="res://.godot/imported/ceu_final.png-163e6f557050cd4d3eb62a61d4d8249d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/girassol (2).png"
-dest_files=["res://.godot/imported/girassol (2).png-6909d183c3ec95b07f4e24f39eddf890.ctex"]
+source_file="res://Assets/Imagens/ceu_final.png"
+dest_files=["res://.godot/imported/ceu_final.png-163e6f557050cd4d3eb62a61d4d8249d.ctex"]
 
 [params]
 

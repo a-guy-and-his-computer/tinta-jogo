@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpwu7v7naef61"
-path="res://.godot/imported/Ceul.png-36f3f89c35d6fb5e1742b9d2d2d9217b.ctex"
+uid="uid://7eec08eeni33"
+path="res://.godot/imported/gira_final.png-0d98289dda733915576044fbba545d9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/Ceul.png"
-dest_files=["res://.godot/imported/Ceul.png-36f3f89c35d6fb5e1742b9d2d2d9217b.ctex"]
+source_file="res://Assets/Imagens/gira_final.png"
+dest_files=["res://.godot/imported/gira_final.png-0d98289dda733915576044fbba545d9c.ctex"]
 
 [params]
 

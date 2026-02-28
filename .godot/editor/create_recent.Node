@@ -1,15 +1,14 @@
+Sprite2D
+ParallaxLayer
 SubViewport
 SubViewportContainer
 CollisionShape2D
 StaticBody2D
 CharacterBody2D
 RayCast2D
-Sprite2D
-ParallaxLayer
 ParallaxBackground
 TileMapLayer
 ShapeCast2D
 Camera2D
 Polygon2D
 CollisionPolygon2D
-Timer
