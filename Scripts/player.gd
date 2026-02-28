@@ -4,14 +4,18 @@ enum Estados {NO_AR, NO_CHAO, NA_PAREDE}
 var estado_player = Estados.NO_AR
 var PULOU_DA_PAREDE = false
 
-@export var VELOCIDADE = 300.0
-@export var VELOCIDADE_FORA_DO_CHAO = 200.0
+@export var VELOCIDADE = 225.0
+@export var VELOCIDADE_FORA_DO_CHAO = 240.0
 @export var VELOCIDADE_PULO = -400.0
-@export var ACELERACAO = 400.0
-@export var FRICCAO = 300.0
-@export var FRICCAO_FORA_DO_CHAO = 200.0
+@export var ACELERACAO = 380.0
+@export var ACELERACAO_FORA_DO_CHAO = 190.0
+@export var FRICCAO = 330.0
+@export var FRICCAO_FORA_DO_CHAO = 160.0
 
+@onready var corpo_camera: CharacterBody2D = $CorpoCamera
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
 
 @onready var pulo_coyote_timer: Timer = $PuloCoyoteTimer
 @onready var wall_jump_timer: Timer = $WallJumpTimer
@@ -20,7 +24,8 @@ func _physics_process(delta: float) -> void:
 	var direcao := Input.get_axis("esquerda", "direita")
 	var estava_no_chao = !is_on_floor() # iniciando variável
 	var normal_da_ultima_parede = get_wall_normal() # iniciando variável
-	var estava_na_parede = !is_on_wall() # iniciando variável
+	var estava_na_parede_direita = !ray_cast_2d.is_colliding() # iniciando variável
+	var estava_na_parede_esquerda = !ray_cast_2d_2.is_colliding() # iniciando variável
 	var descer_devagar = false # iniciando variável
 	
 	match estado_player:
@@ -28,7 +33,7 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				estado_player = Estados.NO_CHAO
 			
-			elif is_on_wall():
+			elif ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding():
 				estado_player = Estados.NA_PAREDE
 				
 			else:
@@ -49,8 +54,11 @@ func _physics_process(delta: float) -> void:
 				buffer_pulo()
 		
 		Estados.NO_CHAO:
-			if not is_on_floor():
+			if not is_on_floor() and not (ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding()):
 				estado_player = Estados.NO_AR
+			
+			elif not is_on_floor() and (ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding()):
+				estado_player = Estados.NA_PAREDE
 			
 			else:
 				PULOU_DA_PAREDE = false
@@ -63,7 +71,7 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				estado_player = Estados.NO_CHAO
 			
-			elif not is_on_wall():
+			elif not (ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding()):
 				estado_player = Estados.NO_AR
 			
 			else:
@@ -80,7 +88,7 @@ func _physics_process(delta: float) -> void:
 	if (estava_no_chao == is_on_floor()) and (not is_on_floor()):
 		pulo_coyote_timer.start()
 	
-	elif (estava_na_parede == is_on_wall()) and (not is_on_wall()):
+	elif ((estava_na_parede_esquerda == ray_cast_2d.is_colliding()) and (not ray_cast_2d.is_colliding())) or ((estava_na_parede_direita == ray_cast_2d_2.is_colliding()) and (not ray_cast_2d_2.is_colliding())):
 		wall_jump_timer.start()
 
 
@@ -121,7 +129,7 @@ func aplicar_aceleracao(direcao, delta):
 
 func aplicar_aceleracao_fora_do_chao(direcao, delta):
 	if direcao and not is_on_floor():
-		velocity.x = move_toward(velocity.x, direcao * VELOCIDADE_FORA_DO_CHAO, ACELERACAO * delta)
+		velocity.x = move_toward(velocity.x, direcao * VELOCIDADE_FORA_DO_CHAO, ACELERACAO_FORA_DO_CHAO * delta)
 
 
 func aplicar_friccao(direcao):

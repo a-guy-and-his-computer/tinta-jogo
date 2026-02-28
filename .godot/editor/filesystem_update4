@@ -1,1 +1,4 @@
+res://Scenes/player.tscn
+res://Shaders/jogo_camera.gdshader
 res://Scenes/jogo.tscn
+res://Scripts/camera_2d.gd

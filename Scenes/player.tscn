@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c20g6lulfpgnk" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://n04onpjvd5ub" path="res://Assets/Imagens/player-dev-texture.png" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://dmul28ydy6bkn" path="res://Scripts/corpo_camera.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://din60x0cmgmsu" path="res://Scripts/camera_2d.gd" id="4_vgqql"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6t5aa"]
 animations = [{
@@ -15,20 +17,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
-size = Vector2(8, 16)
+size = Vector2(7.666667, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
+size = Vector2(21.666666, 24.333332)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vgqql"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fkybt"]
 
 [node name="Player" type="CharacterBody2D" unique_id=754391438]
 scale = Vector2(3, 3)
 floor_constant_speed = true
 floor_snap_length = 4.0
 script = ExtResource("1_cvnsp")
-VELOCIDADE = 225.0
-VELOCIDADE_FORA_DO_CHAO = 240.0
-ACELERACAO = 380.0
-FRICCAO = 330.0
-FRICCAO_FORA_DO_CHAO = 160.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=969933900]
 sprite_frames = SubResource("SpriteFrames_6t5aa")
@@ -44,7 +48,24 @@ one_shot = true
 wait_time = 0.271
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1290086790]
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=225072420]
+position = Vector2(0, 8.333334)
+scale = Vector2(0.4003, 0.04085348)
+shape = SubResource("RectangleShape2D_cvnsp")
+target_position = Vector2(0, 57.11467)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=324653478]
+target_position = Vector2(4.07, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="." unique_id=2038466844]
+target_position = Vector2(-4.07, 0)
+
+[node name="CorpoCamera" type="CharacterBody2D" parent="." unique_id=140861591]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_6t5aa")
+
+[node name="Camera2D" type="Camera2D" parent="CorpoCamera" unique_id=1290086790]
 limit_left = -10000040
 limit_top = -10000025
 limit_right = 9999960
@@ -56,9 +77,28 @@ drag_left_margin = 0.1
 drag_right_margin = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
+script = ExtResource("4_vgqql")
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=225072420]
-position = Vector2(0, 8.333334)
-scale = Vector2(0.4003, 0.04085348)
-shape = SubResource("RectangleShape2D_cvnsp")
-target_position = Vector2(0, 57.11467)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorpoCamera" unique_id=1878740906]
+position = Vector2(0, -2.3333333)
+shape = SubResource("RectangleShape2D_6t5aa")
+
+[node name="CameraLimiteEsquerda" type="StaticBody2D" parent="." unique_id=1933608301]
+position = Vector2(-40, 0)
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_vgqql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimiteEsquerda" unique_id=1602007773]
+shape = SubResource("WorldBoundaryShape2D_fkybt")
+
+[node name="CameraLimiteEsquerda2" type="StaticBody2D" parent="." unique_id=1662140018]
+position = Vector2(40, 0)
+rotation = -1.5707964
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_vgqql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimiteEsquerda2" unique_id=351762079]
+shape = SubResource("WorldBoundaryShape2D_fkybt")

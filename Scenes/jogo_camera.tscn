@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://5yole6b45nmu"]
+
+[ext_resource type="PackedScene" uid="uid://6x4yl0b8gk74" path="res://Scenes/jogo.tscn" id="1_igohm"]
+[ext_resource type="Shader" uid="uid://ddlslpfbonnar" path="res://Shaders/jogo_camera.gdshader" id="1_sofft"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6b6go"]
+shader = ExtResource("1_sofft")
+
+[node name="JogoCamera" type="Node2D" unique_id=797366244]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1912160623]
+texture_filter = 1
+material = SubResource("ShaderMaterial_6b6go")
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=657914774]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="Jogo" parent="SubViewportContainer/SubViewport" unique_id=1899907101 instance=ExtResource("1_igohm")]
+texture_filter = 1
