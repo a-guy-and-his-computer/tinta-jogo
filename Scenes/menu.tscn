@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://clat4iual0f8u"]
+
+[ext_resource type="Script" uid="uid://b83bn25ce3v5o" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://dc4u7fpflp5vt" path="res://Assets/Imagens/image.png" id="2_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://cu67u7pcij3k0" path="res://Assets/Imagens/jogar_2.png" id="3_6swd7"]
+[ext_resource type="Texture2D" uid="uid://xb2qg7na1yy1" path="res://Assets/Imagens/saida_2.png" id="4_7qvly"]
+[ext_resource type="Texture2D" uid="uid://cyuumt8nahl1w" path="res://Assets/Imagens/celo_controles_2.png" id="5_rfqti"]
+[ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/celo_video_1.png" id="6_g8i7c"]
+[ext_resource type="Texture2D" uid="uid://cc3lia12cwd55" path="res://Assets/Imagens/celo_musica111.png" id="7_23t3j"]
+[ext_resource type="Texture2D" uid="uid://cooyt8qwt0u2y" path="res://Assets/Imagens/celo_noite_estrelada_1.png" id="8_8ph6h"]
+[ext_resource type="Texture2D" uid="uid://dglfwj2e052ja" path="res://Assets/Imagens/celo_dali_1.png" id="9_5ti5v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhh6f"]
+texture = ExtResource("2_xhh6f")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6swd7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qvly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfqti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cayip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8i7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23t3j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ph6h"]
+
+[node name="Menu" type="Control" unique_id=389107726]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="Background" type="Panel" parent="." unique_id=1859544458]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xhh6f")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=1495394862]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="JogarSprite" type="Sprite2D" parent="." unique_id=1510551066]
+position = Vector2(133, 164)
+texture = ExtResource("3_6swd7")
+
+[node name="SaidaSprite" type="Sprite2D" parent="." unique_id=837500606]
+position = Vector2(126, 191)
+texture = ExtResource("4_7qvly")
+
+[node name="Jogar" type="Button" parent="." unique_id=1620779604]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 81.0
+offset_right = 171.0
+offset_bottom = 163.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6swd7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7qvly")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rfqti")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
+
+[node name="Sair" type="Button" parent="." unique_id=47756543]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 174.0
+offset_right = 175.0
+offset_bottom = 256.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g8i7c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_23t3j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8ph6h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
+
+[node name="ControlesConfig" type="Sprite2D" parent="." unique_id=1287550011]
+position = Vector2(392, 209)
+texture = ExtResource("5_rfqti")
+
+[node name="DisplayConfig" type="Sprite2D" parent="." unique_id=279948949]
+position = Vector2(460, 208)
+texture = ExtResource("6_g8i7c")
+
+[node name="SomConfig" type="Sprite2D" parent="." unique_id=1801028212]
+position = Vector2(528, 208)
+texture = ExtResource("7_23t3j")
+
+[node name="VanGogh" type="Sprite2D" parent="." unique_id=1300761091]
+position = Vector2(422, 283)
+texture = ExtResource("8_8ph6h")
+
+[node name="Dali" type="Sprite2D" parent="." unique_id=1036403959]
+position = Vector2(505, 284)
+texture = ExtResource("9_5ti5v")
+
+[connection signal="pressed" from="Jogar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]

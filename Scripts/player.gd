@@ -12,7 +12,6 @@ var PULOU_DA_PAREDE = false
 @export var FRICCAO = 330.0
 @export var FRICCAO_FORA_DO_CHAO = 160.0
 
-@onready var corpo_camera: CharacterBody2D = $CorpoCamera
 @onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var ray_cast_2d_2: RayCast2D = $RayCast2D2

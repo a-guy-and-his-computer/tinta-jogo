@@ -1,6 +1,3 @@
-res://Scenes/player.tscn
-res://Shaders/jogo_camera.gdshader
-res://Scripts/corpo_camera.gd
-res://Scripts/camera_2d.gd
-res://Scenes/main.tscn
-res://Scenes/jogo.tscn
+res://Scenes/menu.tscn
+res://Scripts/menu.gd
+res://Scripts/player.gd
