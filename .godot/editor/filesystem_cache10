@@ -1,20 +1,24 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1772315555
-README.md::TextFile::-1::1772315487::0::1::::<><><>0<>0<><>::
-::res://Assets/::1772315608
-::res://Assets/Imagens/::1772319397
-ceu_final.png::CompressedTexture2D::6536700443914171424::1772319397::1772319398::1::::<><><>0<>0<>1c218ee0d2642680088028a97f5d846a<>res://.godot/imported/ceu_final.png-163e6f557050cd4d3eb62a61d4d8249d.ctex::
-gira_final.png::CompressedTexture2D::2254548311242058588::1772316313::1772316313::1::::<><><>0<>0<>6ed2411b1e34bdfbbdf7c3ee613d4513<>res://.godot/imported/gira_final.png-0d98289dda733915576044fbba545d9c.ctex::
-parku socorro.png::CompressedTexture2D::1417045182619931378::1772315487::1772315512::1::::<><><>0<>0<>6ff097ee7e3b30038509c946e876ade2<>res://.godot/imported/parku socorro.png-ab60215037cd1aec0fd58c54a32a29a2.ctex::
-player-dev-texture.png::CompressedTexture2D::965850911463564649::1772315487::1772315512::1::::<><><>0<>0<>ca4f0ec54ea0630da4a802d12f87947e<>res://.godot/imported/player-dev-texture.png-9be1a36e762f3d15ebb24cc6192a53a8.ctex::
-::res://Scenes/::1772318941
-jogo.tscn::PackedScene::2225139109433068709::1772318941::0::1::::<><><>0<>0<><>::uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://c3tjeox1cjs71::::res://Scenes/player.tscn<>uid://7dfmj3da4rb4::::res://Assets/Imagens/ceu_final.png
-jogo_camera.tscn::PackedScene::2156080314937811712::1772315487::0::1::::<><><>0<>0<><>::uid://6x4yl0b8gk74::::res://Scenes/jogo.tscn<>uid://ddlslpfbonnar::::res://Shaders/jogo_camera.gdshader
-player.tscn::PackedScene::6777906534730535306::1772315487::0::1::::<><><>0<>0<><>::uid://c20g6lulfpgnk::::res://Scripts/player.gd<>uid://n04onpjvd5ub::::res://Assets/Imagens/player-dev-texture.png<>uid://dmul28ydy6bkn::::res://Scripts/corpo_camera.gd<>uid://din60x0cmgmsu::::res://Scripts/camera_2d.gd
-::res://Scripts/::1772315608
-camera_2d.gd::GDScript::7749537829374043032::1772315487::0::1::::<>Camera2D<><>0<>0<><>::
-corpo_camera.gd::GDScript::8043533603688209597::1772315487::0::1::::<>CharacterBody2D<><>0<>0<><>::
-jogo.gd::GDScript::610045412691847154::1772315487::0::1::::<>RefCounted<><>0<>0<><>::
-player.gd::GDScript::6719969860192229636::1772315487::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://Shaders/::1772316367
-jogo_camera.gdshader::Shader::7393650082529752429::1772316367::0::1::::<><><>0<>0<><>::
+::res://::1772322466
+README.md::TextFile::-1::1771274788::0::1::::<><><>0<>0<><>::
+::res://Assets/::1771272811
+::res://Assets/Imagens/::1772322404
+Ceul.png::CompressedTexture2D::5872362970821207820::1772232005::1772234245::1::::<><><>0<>0<>4b4aa1fb749f3488fdb26bb14fb2c75c<>res://.godot/imported/Ceul.png-36f3f89c35d6fb5e1742b9d2d2d9217b.ctex::
+ceu_final.png::CompressedTexture2D::6536700443914171424::1772322371::1772322467::1::::<><><>0<>0<>1c218ee0d2642680088028a97f5d846a<>res://.godot/imported/ceu_final.png-163e6f557050cd4d3eb62a61d4d8249d.ctex::
+Girasol_move.png::CompressedTexture2D::7635953523389327356::1772232005::1772232775::1::::<><><>0<>0<>d3fbd6dc7d22c50e659af152efadca87<>res://.godot/imported/Girasol_move.png-6b83aeaa1ade23e6fa639d6672ea4f0f.ctex::
+girassol (2).png::CompressedTexture2D::1982814532591200298::1772234096::1772234246::1::::<><><>0<>0<>659ed6b3601cb6fc3e3b1be10d8f30c8<>res://.godot/imported/girassol (2).png-6909d183c3ec95b07f4e24f39eddf890.ctex::
+gira_final.png::CompressedTexture2D::2254548311242058588::1772322371::1772322467::1::::<><><>0<>0<>6ed2411b1e34bdfbbdf7c3ee613d4513<>res://.godot/imported/gira_final.png-0d98289dda733915576044fbba545d9c.ctex::
+parku socorro.png::CompressedTexture2D::1417045182619931378::1772232005::1772234246::1::::<><><>0<>0<>6ff097ee7e3b30038509c946e876ade2<>res://.godot/imported/parku socorro.png-ab60215037cd1aec0fd58c54a32a29a2.ctex::
+player-dev-texture.png::CompressedTexture2D::965850911463564649::1771273601::1771273601::1::::<><><>0<>0<>ca4f0ec54ea0630da4a802d12f87947e<>res://.godot/imported/player-dev-texture.png-9be1a36e762f3d15ebb24cc6192a53a8.ctex::
+::res://Assets/Musica/::1771272811
+::res://Scenes/::1772322404
+jogo.tscn::PackedScene::2225139109433068709::1772322371::0::1::::<><><>0<>0<><>::uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://c3tjeox1cjs71::::res://Scenes/player.tscn<>uid://c0eorbqumvoaa::::res://Assets/Imagens/ceu_final.png
+jogo_camera.tscn::PackedScene::2156080314937811712::1772244352::0::1::::<><><>0<>0<><>::uid://6x4yl0b8gk74::::res://Scenes/jogo.tscn<>uid://ddlslpfbonnar::::res://Shaders/jogo_camera.gdshader
+player.tscn::PackedScene::6777906534730535306::1772322371::0::1::::<><><>0<>0<><>::uid://c20g6lulfpgnk::::res://Scripts/player.gd<>uid://n04onpjvd5ub::::res://Assets/Imagens/player-dev-texture.png<>uid://dmul28ydy6bkn::::res://Scripts/corpo_camera.gd<>uid://din60x0cmgmsu::::res://Scripts/camera_2d.gd
+::res://Scripts/::1772322404
+camera_2d.gd::GDScript::7749537829374043032::1772313377::0::1::::<>Camera2D<><>0<>0<><>::
+corpo_camera.gd::GDScript::8043533603688209597::1772300531::0::1::::<>CharacterBody2D<><>0<>0<><>::
+jogo.gd::GDScript::610045412691847154::1772232005::0::1::::<>RefCounted<><>0<>0<><>::
+player.gd::GDScript::6719969860192229636::1772240214::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Shaders/::1772322404
+jogo_camera.gdshader::Shader::7393650082529752429::1772311396::0::1::::<><><>0<>0<><>::

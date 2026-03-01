@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Tinta (4.6.1)"
-run/main_scene="uid://5yole6b45nmu"
+run/main_scene="uid://6x4yl0b8gk74"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
@@ -25,7 +25,7 @@ window/size/viewport_height=360
 window/size/mode=3
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
 [input]

@@ -76,7 +76,7 @@ load_path = "res://.godot/imported/gira_final.png-0d98289dda733915576044fbba545d
 [node name="Jogo" type="Node2D" unique_id=1899907101]
 
 [node name="Player" parent="." unique_id=1832251719 instance=ExtResource("2_h60hs")]
-position = Vector2(216, -35)
+position = Vector2(218, -136)
 VELOCIDADE = 160.0
 VELOCIDADE_FORA_DO_CHAO = 160.0
 ACELERACAO = 1250.0
@@ -90,7 +90,7 @@ tile_set = SubResource("TileSet_6b6tp")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=918359261]
 
 [node name="ceu" type="ParallaxLayer" parent="ParallaxBackground" unique_id=589686490]
-position = Vector2(8, 0)
+position = Vector2(3, -1)
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ceu" unique_id=792586418]
