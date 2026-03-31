@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Tinta (4.6.1)"
-run/main_scene="uid://6x4yl0b8gk74"
+run/main_scene="uid://clat4iual0f8u"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
@@ -58,4 +58,3 @@ direita={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-2d/snap/snap_2d_transforms_to_pixel=true

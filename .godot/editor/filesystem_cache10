@@ -1,8 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1772388739
+::res://::1774988982
 README.md::TextFile::-1::1771274788::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1771272811
-::res://Assets/Imagens/::1772389797
+::res://Assets/Imagens/::1774867521
 a.png::CompressedTexture2D::5291493244007688812::1772389797::1772389797::1::::<><><>0<>0<>45f853a46134b7be850aea9939aeba61<>res://.godot/imported/a.png-fb90de192c47ccac9dbf8dd3d7ecda1b.ctex::
 b.png::CompressedTexture2D::3673734991996551036::1772389771::1772389772::1::::<><><>0<>0<>6422d4627ded93cacc90b6d0dbbf4547<>res://.godot/imported/b.png-6e8e2480ecae431432021bf9dc724075.ctex::
 celo_controles_1.png::CompressedTexture2D::1920581369851172867::1772389303::1772389303::1::::<><><>0<>0<>4256bf441dfc4b898a9cd2788dff025d<>res://.godot/imported/celo_controles_1.png-624a6c94e85f58fae56cf219c2f2364d.ctex::
@@ -26,15 +26,19 @@ image.png::CompressedTexture2D::7360778464514706141::1772388414::1772388415::1::
 jogar_2.png::CompressedTexture2D::6242594314190546469::1772389301::1772389303::1::::<><><>0<>0<>d5b823d89f9734c8fa48afc29fe962c9<>res://.godot/imported/jogar_2.png-67712be69d86d692da81282654440d8c.ctex::
 jogar_3.png::CompressedTexture2D::5994146210232033505::1772389301::1772389303::1::::<><><>0<>0<>6a21419d326be570a35083c6dc5219f0<>res://.godot/imported/jogar_3.png-64cec8316954fc6f9752f5548d3a9eee.ctex::
 parku socorro.png::CompressedTexture2D::1417045182619931378::1772232005::1772234246::1::::<><><>0<>0<>6ff097ee7e3b30038509c946e876ade2<>res://.godot/imported/parku socorro.png-ab60215037cd1aec0fd58c54a32a29a2.ctex::
+parku_shader.png::CompressedTexture2D::3311157742461120201::1774867520::1774867521::1::::<><><>0<>0<>dd5393c7f8857445c0f31fbd01ad5b2e<>res://.godot/imported/parku_shader.png-3145a7e244a547abb2dbebf2de80f8a7.ctex::
 player-dev-texture.png::CompressedTexture2D::965850911463564649::1771273601::1771273601::1::::<><><>0<>0<>ca4f0ec54ea0630da4a802d12f87947e<>res://.godot/imported/player-dev-texture.png-9be1a36e762f3d15ebb24cc6192a53a8.ctex::
 saida_2.png::CompressedTexture2D::1618076078101530650::1772389301::1772389303::1::::<><><>0<>0<>e198ef8f101471958bf724213de79981<>res://.godot/imported/saida_2.png-dfbe208867fe65f14a8345c0a18df3e0.ctex::
 saida_3.png::CompressedTexture2D::3166201166278434570::1772389303::1772389303::1::::<><><>0<>0<>b984cb74c0a45c804f8002c5e9516e57<>res://.godot/imported/saida_3.png-129bba7d74b2373cc22bbc9d426c4ed8.ctex::
 ::res://Assets/Musica/::1771272811
-::res://Scenes/::1772389620
-jogo.tscn::PackedScene::2225139109433068709::1772324926::0::1::::<><><>0<>0<><>::uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://c3tjeox1cjs71::::res://Scenes/player.tscn<>uid://c0eorbqumvoaa::::res://Assets/Imagens/ceu_final.png
-player.tscn::PackedScene::6777906534730535306::1772325270::0::1::::<><><>0<>0<><>::uid://c20g6lulfpgnk::::res://Scripts/player.gd<>uid://n04onpjvd5ub::::res://Assets/Imagens/player-dev-texture.png
-menu.tscn::PackedScene::5546124509388941826::1772389620::0::1::::<><><>0<>0<><>::uid://b83bn25ce3v5o::::res://Scripts/menu.gd<>uid://dc4u7fpflp5vt::::res://Assets/Imagens/image.png
-::res://Scripts/::1772389323
+::res://Scenes/::1774988888
+jogo.tscn::PackedScene::2225139109433068709::1774987280::0::1::::<><><>0<>0<><>::uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://c3tjeox1cjs71::::res://Scenes/player.tscn<>uid://c0eorbqumvoaa::::res://Assets/Imagens/ceu_final.png
+menu.tscn::PackedScene::5546124509388941826::1774988888::0::1::::<><><>0<>0<><>::uid://b83bn25ce3v5o::::res://Scripts/menu.gd<>uid://dc4u7fpflp5vt::::res://Assets/Imagens/image.png<>uid://cu67u7pcij3k0::::res://Assets/Imagens/jogar_2.png<>uid://xb2qg7na1yy1::::res://Assets/Imagens/saida_2.png<>uid://cyuumt8nahl1w::::res://Assets/Imagens/celo_controles_2.png<>uid://imky4csntnbd::::res://Assets/Imagens/celo_video_1.png<>uid://cc3lia12cwd55::::res://Assets/Imagens/celo_musica111.png<>uid://cooyt8qwt0u2y::::res://Assets/Imagens/celo_noite_estrelada_1.png<>uid://dglfwj2e052ja::::res://Assets/Imagens/celo_dali_1.png
+player.tscn::PackedScene::6777906534730535306::1774985995::0::1::::<><><>0<>0<><>::uid://c20g6lulfpgnk::::res://Scripts/player.gd<>uid://n04onpjvd5ub::::res://Assets/Imagens/player-dev-texture.png<>uid://dmul28ydy6bkn::::res://Scripts/corpo_camera.gd
+::res://Scripts/::1774988888
+corpo_camera.gd::GDScript::8043533603688209597::1774986967::0::1::::<>CharacterBody2D<><>0<>0<><>::
+jogo.gd::GDScript::610045412691847154::1772232005::0::1::::<>RefCounted<><>0<>0<><>::
+menu.gd::GDScript::4760540497747301950::1774988888::0::1::::<>Control<><>0<>0<><>::
 player.gd::GDScript::6719969860192229636::1772386756::0::1::::<>CharacterBody2D<><>0<>0<><>::
-menu.gd::GDScript::4760540497747301950::1772389323::0::1::::<>Control<><>0<>0<><>::
-::res://Shaders/::1772325267
+tile_map_layer.gd::GDScript::8427408977355838888::1774897565::0::1::::<>TileMapLayer<><>0<>0<><>::
+::res://Shaders/::1774988285
