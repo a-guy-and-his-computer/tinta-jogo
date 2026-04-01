@@ -19,6 +19,8 @@ var PULOU_DA_PAREDE = false
 @onready var pulo_coyote_timer: Timer = $PuloCoyoteTimer
 @onready var wall_jump_timer: Timer = $WallJumpTimer
 
+@onready var ani: AnimatedSprite2D = $AnimatedSprite2D
+
 func _physics_process(delta: float) -> void:
 	var direcao := Input.get_axis("esquerda", "direita")
 	var estava_no_chao = !is_on_floor() # iniciando variável
@@ -51,6 +53,11 @@ func _physics_process(delta: float) -> void:
 				aplicar_aceleracao_fora_do_chao(direcao, delta)
 				aplicar_friccao_fora_do_chao(direcao)
 				buffer_pulo()
+				
+				if not is_on_floor():
+					ani.play("pulando")
+					
+				
 		
 		Estados.NO_CHAO:
 			if not is_on_floor() and not (ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding()):
@@ -65,6 +72,18 @@ func _physics_process(delta: float) -> void:
 				aplicar_friccao(direcao)
 				aplicar_pulo()
 				aplica_pulo_ajustavel()
+		
+			if is_on_floor() and direcao ==0:
+				ani.play("parado")
+				
+			elif is_on_floor() and direcao < 0:
+				ani.flip_h = true
+				ani.play("andando")
+				
+			elif is_on_floor() and direcao > 0:
+				ani.flip_h = false
+				ani.play("andando")
+		
 		
 		Estados.NA_PAREDE:
 			if is_on_floor():
@@ -81,6 +100,17 @@ func _physics_process(delta: float) -> void:
 				aplicar_aceleracao_fora_do_chao(direcao, delta)
 				aplicar_friccao_fora_do_chao(direcao)
 				aplicar_wall_jump(normal_da_ultima_parede)
+			
+			if not is_on_floor() and ray_cast_2d.is_colliding():
+				ani.play("parede")
+				ani.flip_h = false
+			
+			elif not is_on_floor() and ray_cast_2d_2.is_colliding():
+				ani.play("parede")
+				ani.flip_h = true
+			
+			
+			
 
 	move_and_slide() # mova o personagem
 	

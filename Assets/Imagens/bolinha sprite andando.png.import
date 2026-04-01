@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n04onpjvd5ub"
-path="res://.godot/imported/player-dev-texture.png-9be1a36e762f3d15ebb24cc6192a53a8.ctex"
+uid="uid://cgpdpwe6mpx5w"
+path="res://.godot/imported/bolinha sprite andando.png-85d8194c2ad9a43376f27f4a0b0208be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/player-dev-texture.png"
-dest_files=["res://.godot/imported/player-dev-texture.png-9be1a36e762f3d15ebb24cc6192a53a8.ctex"]
+source_file="res://Assets/Imagens/bolinha sprite andando.png"
+dest_files=["res://.godot/imported/bolinha sprite andando.png-85d8194c2ad9a43376f27f4a0b0208be.ctex"]
 
 [params]
 
