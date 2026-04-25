@@ -125,7 +125,7 @@ animations = [{
 radius = 3.3333335
 height = 6.666667
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3smsa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
 
@@ -157,16 +157,16 @@ one_shot = true
 wait_time = 0.271
 one_shot = true
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=225072420]
-position = Vector2(0, 8.333334)
-scale = Vector2(0.4003, 0.04085348)
-shape = SubResource("RectangleShape2D_cvnsp")
-target_position = Vector2(0, 57.11467)
+[node name="BufferDePulo" type="ShapeCast2D" parent="." unique_id=225072420]
+position = Vector2(0, 3.0000002)
+scale = Vector2(0.333, 0.02)
+shape = SubResource("CapsuleShape2D_3smsa")
+target_position = Vector2(0, 66.66669)
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=324653478]
+[node name="DetectorParedeDireita" type="RayCast2D" parent="." unique_id=324653478]
 target_position = Vector2(4.07, 0)
 
-[node name="RayCast2D2" type="RayCast2D" parent="." unique_id=2038466844]
+[node name="DetectorParedeEsquerda" type="RayCast2D" parent="." unique_id=2038466844]
 target_position = Vector2(-4.07, 0)
 
 [node name="CameraMovel" type="CharacterBody2D" parent="." unique_id=371684872]

@@ -1,8 +1,14 @@
 [gd_scene format=4 uid="uid://6x4yl0b8gk74"]
 
+[ext_resource type="Script" uid="uid://ixrmg1815n5s" path="res://Scripts/jogo.gd" id="1_rokwo"]
 [ext_resource type="Texture2D" uid="uid://ugor6md6osde" path="res://Assets/Imagens/parku socorro.png" id="2_82dp6"]
 [ext_resource type="PackedScene" uid="uid://c3tjeox1cjs71" path="res://Scenes/player.tscn" id="2_h60hs"]
 [ext_resource type="Texture2D" uid="uid://c0eorbqumvoaa" path="res://Assets/Imagens/ceu_final.png" id="3_rokwo"]
+[ext_resource type="Shader" uid="uid://be40kliqqhkg6" path="res://Shaders/background.gdshader" id="4_6b6tp"]
+[ext_resource type="Texture2D" uid="uid://cpwu7v7naef61" path="res://Assets/Imagens/Ceul.png" id="5_cwcib"]
+[ext_resource type="Texture2D" uid="uid://7eec08eeni33" path="res://Assets/Imagens/gira_final.png" id="7_4aaip"]
+[ext_resource type="Shader" uid="uid://cge5puttavi24" path="res://Shaders/Blur/blur_atras.gdshader" id="7_8ihgy"]
+[ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/celo_video_1.png" id="8_nyb5w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rokwo"]
 texture = ExtResource("2_82dp6")
@@ -70,13 +76,44 @@ texture = ExtResource("2_82dp6")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rokwo")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6b6tp"]
+shader = ExtResource("4_6b6tp")
+shader_parameter/desfoque_quant = 0.0
+shader_parameter/transicao = 0.0
+shader_parameter/textura_original = ExtResource("3_rokwo")
+shader_parameter/proxima_textura = ExtResource("5_cwcib")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exr17"]
+shader = ExtResource("4_6b6tp")
+shader_parameter/desfoque_quant = 0.0
+shader_parameter/transicao = 0.0
+shader_parameter/textura_original = ExtResource("7_4aaip")
+shader_parameter/proxima_textura = ExtResource("2_82dp6")
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_82dp6"]
 load_path = "res://.godot/imported/gira_final.png-0d98289dda733915576044fbba545d9c.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwcib"]
+size = Vector2(449, 58)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nyb5w"]
+shader = ExtResource("7_8ihgy")
+shader_parameter/desfoque_quant = 2.0
+shader_parameter/opacidade = 0.5310000252225
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4aaip"]
+size = Vector2(468, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82dp6"]
+size = Vector2(48, 419)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_82dp6"]
+
 [node name="Jogo" type="Node2D" unique_id=1899907101]
+script = ExtResource("1_rokwo")
 
 [node name="Player" parent="." unique_id=1832251719 instance=ExtResource("2_h60hs")]
-position = Vector2(177.00002, 256)
+position = Vector2(121, 239)
 VELOCIDADE = 160.0
 VELOCIDADE_FORA_DO_CHAO = 160.0
 ACELERACAO = 1250.0
@@ -89,40 +126,99 @@ tile_set = SubResource("TileSet_6b6tp")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=918359261]
 
-[node name="ceu" type="ParallaxLayer" parent="ParallaxBackground" unique_id=589686490]
+[node name="Ceu" type="ParallaxLayer" parent="ParallaxBackground" unique_id=589686490]
 position = Vector2(3, -1)
 motion_scale = Vector2(0, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ceu" unique_id=792586418]
+[node name="PlanoDeFundo" type="Sprite2D" parent="ParallaxBackground/Ceu" unique_id=792586418]
+material = SubResource("ShaderMaterial_6b6tp")
 position = Vector2(315, 181)
 scale = Vector2(1.1211894, 1.1249999)
 texture = ExtResource("3_rokwo")
 
-[node name="3-gira" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1047622224]
+[node name="3-GirassoisMaisDeFundo" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1047622224]
 position = Vector2(-68, -79)
 motion_scale = Vector2(0.7, 0.05)
 motion_mirroring = Vector2(704, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3-gira" unique_id=1247340590]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3-GirassoisMaisDeFundo" unique_id=1247340590]
+material = SubResource("ShaderMaterial_exr17")
 position = Vector2(319, 266)
 scale = Vector2(1.2286212, 1)
 texture = SubResource("CompressedTexture2D_82dp6")
 
-[node name="2-gira" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2092511253]
+[node name="2-GirassoisDoMeio" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2092511253]
 position = Vector2(-25, -24)
 motion_scale = Vector2(0.7, 0.1)
 motion_mirroring = Vector2(704, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2-gira" unique_id=512606186]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2-GirassoisDoMeio" unique_id=512606186]
+material = SubResource("ShaderMaterial_exr17")
 position = Vector2(327, 222)
 scale = Vector2(1.2286212, 1)
 texture = SubResource("CompressedTexture2D_82dp6")
 
-[node name="1-gira" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1569523858]
+[node name="1-GirassoisDeFrente" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1569523858]
 motion_scale = Vector2(0.7, 0.2)
 motion_mirroring = Vector2(704, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1-gira" unique_id=414762644]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1-GirassoisDeFrente" unique_id=414762644]
+material = SubResource("ShaderMaterial_exr17")
 position = Vector2(353, 206)
 scale = Vector2(1.2286212, 1)
 texture = SubResource("CompressedTexture2D_82dp6")
+
+[node name="Checkpoints" type="Node2D" parent="." unique_id=608496253]
+
+[node name="1 - Checkpoint1" type="Area2D" parent="Checkpoints" unique_id=230867745]
+position = Vector2(564, 314)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/1 - Checkpoint1" unique_id=1980047125]
+position = Vector2(5, -214.5)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_cwcib")
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/1 - Checkpoint1" unique_id=1421162282]
+modulate = Color(1, 1, 1, 0.49803922)
+material = SubResource("ShaderMaterial_nyb5w")
+position = Vector2(7.4999905, -25.499998)
+scale = Vector2(3.3999956, 19.000002)
+texture = ExtResource("8_nyb5w")
+
+[node name="2 - Checkpoint2" type="Area2D" parent="Checkpoints" unique_id=1325008611]
+position = Vector2(1255, 167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/2 - Checkpoint2" unique_id=1586702138]
+position = Vector2(0.5, -209)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_4aaip")
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/2 - Checkpoint2" unique_id=1094988822]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(9.000002, 0.5000043)
+scale = Vector2(3.999999, 18.999998)
+texture = ExtResource("8_nyb5w")
+
+[node name="3 - Checkpoint3" type="Area2D" parent="Checkpoints" unique_id=680899229]
+position = Vector2(1927, -68)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/3 - Checkpoint3" unique_id=1285852525]
+position = Vector2(1, -189.5)
+shape = SubResource("RectangleShape2D_82dp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/3 - Checkpoint3" unique_id=1697657155]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(10.750028, -10.500001)
+scale = Vector2(3.0999985, 17.00001)
+texture = ExtResource("8_nyb5w")
+
+[node name="ZonaDaMorte" type="Area2D" parent="." unique_id=766702045]
+position = Vector2(943, 404)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDaMorte" unique_id=1205391872]
+shape = SubResource("WorldBoundaryShape2D_82dp6")
+
+[connection signal="body_entered" from="Checkpoints/1 - Checkpoint1" to="Player" method="_on___checkpoint_1_body_entered"]
+[connection signal="body_entered" from="Checkpoints/2 - Checkpoint2" to="Player" method="_on___checkpoint_2_body_entered"]
+[connection signal="body_entered" from="Checkpoints/3 - Checkpoint3" to="Player" method="_on___checkpoint_3_body_entered"]
+[connection signal="body_entered" from="ZonaDaMorte" to="Player" method="_on_zona_da_morte_body_entered"]

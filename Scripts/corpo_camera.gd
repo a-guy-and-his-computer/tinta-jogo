@@ -6,12 +6,12 @@ extends CharacterBody2D
 @export var LIMITE_MAX_ESQUERDA = 50.0
 @export var LIMITE_MAX_DIREITA = 50.0
 
-@onready var limite_esquerda: CollisionShape2D = $"../CameraLimite/LimiteEsquerda"
-@onready var limite_direita: CollisionShape2D = $"../CameraLimite/LimiteDireita"
+@onready var LIMITE_ESQUERDA: CollisionShape2D = $"../CameraLimite/LimiteEsquerda"
+@onready var LIMITE_DIREITA: CollisionShape2D = $"../CameraLimite/LimiteDireita"
 
 func _ready() -> void:
-	limite_esquerda.position.x = -1. * LIMITE_MAX_ESQUERDA
-	limite_direita.position.x = LIMITE_MAX_DIREITA
+	LIMITE_ESQUERDA.position.x = -1. * LIMITE_MAX_ESQUERDA
+	LIMITE_DIREITA.position.x = LIMITE_MAX_DIREITA
 
 func _physics_process(delta: float) -> void:
 	var direcao := Input.get_axis("esquerda", "direita")

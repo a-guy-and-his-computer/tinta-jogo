@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dc4u7fpflp5vt" path="res://Assets/Imagens/image.png" id="2_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://cu67u7pcij3k0" path="res://Assets/Imagens/jogar_2.png" id="3_6swd7"]
 [ext_resource type="Texture2D" uid="uid://xb2qg7na1yy1" path="res://Assets/Imagens/saida_2.png" id="4_7qvly"]
-[ext_resource type="Texture2D" uid="uid://cyuumt8nahl1w" path="res://Assets/Imagens/celo_controles_2.png" id="5_rfqti"]
+[ext_resource type="Texture2D" uid="uid://cyuumt8nahl1w" path="res://Assets/Imagens/celo_controles_1.png" id="5_rfqti"]
 [ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/celo_video_1.png" id="6_g8i7c"]
 [ext_resource type="Texture2D" uid="uid://cc3lia12cwd55" path="res://Assets/Imagens/celo_musica111.png" id="7_23t3j"]
 [ext_resource type="Texture2D" uid="uid://cooyt8qwt0u2y" path="res://Assets/Imagens/celo_noite_estrelada_1.png" id="8_8ph6h"]
@@ -46,32 +46,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xhh6f")
 
-[node name="Container" type="VBoxContainer" parent="." unique_id=1495394862]
-texture_filter = 2
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = 8.0
-offset_right = 49.0
-offset_bottom = 94.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 8
+[node name="CompletouNivelVanGogh" type="Sprite2D" parent="." unique_id=1300761091]
+position = Vector2(422, 283)
+texture = ExtResource("8_8ph6h")
 
-[node name="JogarSprite" type="Sprite2D" parent="." unique_id=1510551066]
+[node name="CompletouNivelDali" type="Sprite2D" parent="." unique_id=1036403959]
+position = Vector2(505, 284)
+texture = ExtResource("9_5ti5v")
+
+[node name="Jogar" type="Node2D" parent="." unique_id=1822001711]
+
+[node name="JogarSprite" type="Sprite2D" parent="Jogar" unique_id=1510551066]
 position = Vector2(133, 164)
 texture = ExtResource("3_6swd7")
 
-[node name="SaidaSprite" type="Sprite2D" parent="." unique_id=837500606]
-position = Vector2(126, 191)
-texture = ExtResource("4_7qvly")
-
-[node name="Jogar" type="Button" parent="." unique_id=1620779604]
-layout_mode = 0
+[node name="JogarBotao" type="Button" parent="Jogar" unique_id=1620779604]
 offset_left = 61.0
 offset_top = 81.0
 offset_right = 171.0
@@ -83,8 +72,13 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_7qvly")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_rfqti")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 
-[node name="Sair" type="Button" parent="." unique_id=47756543]
-layout_mode = 0
+[node name="Sair" type="Node2D" parent="." unique_id=1512454547]
+
+[node name="SaidaSprite" type="Sprite2D" parent="Sair" unique_id=837500606]
+position = Vector2(126, 191)
+texture = ExtResource("4_7qvly")
+
+[node name="SairBotao" type="Button" parent="Sair" unique_id=47756543]
 offset_left = 65.0
 offset_top = 174.0
 offset_right = 175.0
@@ -96,29 +90,75 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_23t3j")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8ph6h")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 
-[node name="ControlesConfig" type="Sprite2D" parent="." unique_id=1287550011]
+[node name="ControlesConfig" type="Node2D" parent="." unique_id=588778431]
+
+[node name="ControlesSprite" type="Sprite2D" parent="ControlesConfig" unique_id=1287550011]
 position = Vector2(392, 209)
 texture = ExtResource("5_rfqti")
 
-[node name="DisplayConfig" type="Sprite2D" parent="." unique_id=279948949]
+[node name="ControlesBotao" type="Button" parent="ControlesConfig" unique_id=68902883]
+offset_left = 369.00003
+offset_top = 188.0
+offset_right = 479.00003
+offset_bottom = 270.0
+scale = Vector2(0.41958752, 0.4773308)
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6swd7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7qvly")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rfqti")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
+
+[node name="DisplayConfig" type="Node2D" parent="." unique_id=850080305]
+
+[node name="DisplaySprite" type="Sprite2D" parent="DisplayConfig" unique_id=279948949]
 position = Vector2(460, 208)
 texture = ExtResource("6_g8i7c")
 
-[node name="SomConfig" type="Sprite2D" parent="." unique_id=1801028212]
+[node name="DisplayBotao" type="Button" parent="DisplayConfig" unique_id=1126858448]
+offset_left = 439.0
+offset_top = 187.0
+offset_right = 549.0
+offset_bottom = 269.0
+scale = Vector2(0.37958753, 0.4773308)
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6swd7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7qvly")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rfqti")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
+
+[node name="SomConfig" type="Node2D" parent="." unique_id=1574973570]
+
+[node name="SomSprite" type="Sprite2D" parent="SomConfig" unique_id=1801028212]
 position = Vector2(528, 208)
 texture = ExtResource("7_23t3j")
 
-[node name="VanGogh" type="Sprite2D" parent="." unique_id=1300761091]
-position = Vector2(422, 283)
-texture = ExtResource("8_8ph6h")
+[node name="SomBotao" type="Button" parent="SomConfig" unique_id=634474212]
+offset_left = 508.0
+offset_top = 189.00002
+offset_right = 618.0
+offset_bottom = 271.0
+scale = Vector2(0.37958753, 0.4773308)
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6swd7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7qvly")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rfqti")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 
-[node name="Dali" type="Sprite2D" parent="." unique_id=1036403959]
-position = Vector2(505, 284)
-texture = ExtResource("9_5ti5v")
-
-[connection signal="mouse_entered" from="Jogar" to="." method="_on_jogar_mouse_entered"]
-[connection signal="mouse_exited" from="Jogar" to="." method="_on_jogar_mouse_exited"]
-[connection signal="pressed" from="Jogar" to="." method="_on_button_pressed"]
-[connection signal="mouse_entered" from="Sair" to="." method="_on_sair_mouse_entered"]
-[connection signal="mouse_exited" from="Sair" to="." method="_on_sair_mouse_exited"]
-[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="mouse_entered" from="Jogar/JogarBotao" to="." method="_on_jogar_mouse_entered"]
+[connection signal="mouse_exited" from="Jogar/JogarBotao" to="." method="_on_jogar_mouse_exited"]
+[connection signal="pressed" from="Jogar/JogarBotao" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Sair/SairBotao" to="." method="_on_sair_mouse_entered"]
+[connection signal="mouse_exited" from="Sair/SairBotao" to="." method="_on_sair_mouse_exited"]
+[connection signal="pressed" from="Sair/SairBotao" to="." method="_on_sair_pressed"]
+[connection signal="mouse_entered" from="ControlesConfig/ControlesBotao" to="." method="_on_controles_botao_mouse_entered"]
+[connection signal="mouse_exited" from="ControlesConfig/ControlesBotao" to="." method="_on_controles_botao_mouse_exited"]
+[connection signal="pressed" from="ControlesConfig/ControlesBotao" to="." method="_on_controles_botao_pressed"]
+[connection signal="mouse_entered" from="DisplayConfig/DisplayBotao" to="." method="_on_display_botao_mouse_entered"]
+[connection signal="mouse_exited" from="DisplayConfig/DisplayBotao" to="." method="_on_display_botao_mouse_exited"]
+[connection signal="pressed" from="DisplayConfig/DisplayBotao" to="." method="_on_display_botao_pressed"]
+[connection signal="mouse_entered" from="SomConfig/SomBotao" to="." method="_on_som_botao_mouse_entered"]
+[connection signal="mouse_exited" from="SomConfig/SomBotao" to="." method="_on_som_botao_mouse_exited"]
+[connection signal="pressed" from="SomConfig/SomBotao" to="." method="_on_som_botao_pressed"]

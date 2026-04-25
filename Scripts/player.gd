@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
-enum Estados {NO_AR, NO_CHAO, NA_PAREDE}
-var estado_player = Estados.NO_AR
+enum ESTADOS {NO_AR, NO_CHAO, NA_PAREDE}
+var ESTADO_PLAYER = ESTADOS.NO_AR
 var PULOU_DA_PAREDE = false
+var ULTIMO_CHECKPOINT = Vector2.ZERO
+
+var transicao_reversa = false
+var tween_atual: Tween
 
 @export var VELOCIDADE = 225.0
 @export var VELOCIDADE_FORA_DO_CHAO = 240.0
@@ -12,41 +16,45 @@ var PULOU_DA_PAREDE = false
 @export var FRICCAO = 330.0
 @export var FRICCAO_FORA_DO_CHAO = 160.0
 
-@onready var shape_cast_2d: ShapeCast2D = $ShapeCast2D
-@onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
+@onready var BUFFER_DE_PULO: ShapeCast2D = $BufferDePulo
+@onready var DETECTOR_PAREDE_DIREITA: RayCast2D = $DetectorParedeDireita
+@onready var DETECTOR_PAREDE_ESQUERDA: RayCast2D = $DetectorParedeEsquerda
+@onready var PULO_COYOTE_TIMER: Timer = $PuloCoyoteTimer
+@onready var WALL_JUMP_TIMER: Timer = $WallJumpTimer
 
-@onready var pulo_coyote_timer: Timer = $PuloCoyoteTimer
-@onready var wall_jump_timer: Timer = $WallJumpTimer
+@onready var ZONA_DA_MORTE: Area2D = $"../ZonaDaMorte"
+@onready var CHECKPOINT_1: Area2D = $"../Checkpoints/1 - Checkpoint1"
+@onready var CHECKPOINT_2: Area2D = $"../Checkpoints/2 - Checkpoint2"
+@onready var CHECKPOINT_3: Area2D = $"../Checkpoints/3 - Checkpoint3"
 
-@onready var ani: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ANIMACOES: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	var direcao := Input.get_axis("esquerda", "direita")
-	var estava_no_chao = !is_on_floor() # iniciando variável
-	var normal_da_ultima_parede = get_wall_normal() # iniciando variável
-	var estava_na_parede_direita = !ray_cast_2d.is_colliding() # iniciando variável
-	var estava_na_parede_esquerda = !ray_cast_2d_2.is_colliding() # iniciando variável
-	var descer_devagar = false # iniciando variável
+	var direcao := Input.get_axis("esquerda", "direita") # Iniciando variável
+	var estava_no_chao = !is_on_floor() # Iniciando variável
+	var normal_da_ultima_parede = get_wall_normal() # Iniciando variável
+	var estava_na_parede_direita = !DETECTOR_PAREDE_DIREITA.is_colliding() # Iniciando variável
+	var estava_na_parede_esquerda = !DETECTOR_PAREDE_ESQUERDA.is_colliding() # Iniciando variável
+	var descer_devagar = false # Iniciando variável
 	
-	match estado_player:
-		Estados.NO_AR:
+	match ESTADO_PLAYER:
+		ESTADOS.NO_AR:
 			if is_on_floor():
-				estado_player = Estados.NO_CHAO
+				ESTADO_PLAYER = ESTADOS.NO_CHAO
 			
-			elif ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding():
-				estado_player = Estados.NA_PAREDE
+			elif DETECTOR_PAREDE_DIREITA.is_colliding() or DETECTOR_PAREDE_ESQUERDA.is_colliding():
+				ESTADO_PLAYER = ESTADOS.NA_PAREDE
 				
 			else:
-				if pulo_coyote_timer.time_left > 0 and Input.is_action_just_pressed("pular"):
+				if PULO_COYOTE_TIMER.time_left > 0 and Input.is_action_just_pressed("pular"):
 					aplicar_pulo()
 					print("coyote")
-					pulo_coyote_timer.stop()
+					PULO_COYOTE_TIMER.stop()
 				
-				elif wall_jump_timer.time_left > 0 and Input.is_action_just_pressed("pular"):
+				elif WALL_JUMP_TIMER.time_left > 0 and Input.is_action_just_pressed("pular"):
 					aplicar_wall_jump(normal_da_ultima_parede)
 					print("wall")
-					wall_jump_timer.stop()
+					WALL_JUMP_TIMER.stop()
 				
 				aplica_pulo_ajustavel()
 				aplicar_gravidade(delta, descer_devagar)
@@ -55,16 +63,15 @@ func _physics_process(delta: float) -> void:
 				buffer_pulo()
 				
 				if not is_on_floor():
-					ani.play("pulando")
-					
-				
+					ANIMACOES.play("pulando")
 		
-		Estados.NO_CHAO:
-			if not is_on_floor() and not (ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding()):
-				estado_player = Estados.NO_AR
+		
+		ESTADOS.NO_CHAO:
+			if not is_on_floor() and not (DETECTOR_PAREDE_DIREITA.is_colliding() or DETECTOR_PAREDE_ESQUERDA.is_colliding()):
+				ESTADO_PLAYER = ESTADOS.NO_AR
 			
-			elif not is_on_floor() and (ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding()):
-				estado_player = Estados.NA_PAREDE
+			elif not is_on_floor() and (DETECTOR_PAREDE_DIREITA.is_colliding() or DETECTOR_PAREDE_ESQUERDA.is_colliding()):
+				ESTADO_PLAYER = ESTADOS.NA_PAREDE
 			
 			else:
 				PULOU_DA_PAREDE = false
@@ -72,25 +79,25 @@ func _physics_process(delta: float) -> void:
 				aplicar_friccao(direcao)
 				aplicar_pulo()
 				aplica_pulo_ajustavel()
-		
+			
 			if is_on_floor() and direcao ==0:
-				ani.play("parado")
+				ANIMACOES.play("parado")
 				
 			elif is_on_floor() and direcao < 0:
-				ani.flip_h = true
-				ani.play("andando")
+				ANIMACOES.flip_h = true
+				ANIMACOES.play("andando")
 				
 			elif is_on_floor() and direcao > 0:
-				ani.flip_h = false
-				ani.play("andando")
+				ANIMACOES.flip_h = false
+				ANIMACOES.play("andando")
 		
 		
-		Estados.NA_PAREDE:
+		ESTADOS.NA_PAREDE:
 			if is_on_floor():
-				estado_player = Estados.NO_CHAO
+				ESTADO_PLAYER = ESTADOS.NO_CHAO
 			
-			elif not (ray_cast_2d.is_colliding() or ray_cast_2d_2.is_colliding()):
-				estado_player = Estados.NO_AR
+			elif not (DETECTOR_PAREDE_DIREITA.is_colliding() or DETECTOR_PAREDE_ESQUERDA.is_colliding()):
+				ESTADO_PLAYER = ESTADOS.NO_AR
 			
 			else:
 				PULOU_DA_PAREDE = false
@@ -101,25 +108,26 @@ func _physics_process(delta: float) -> void:
 				aplicar_friccao_fora_do_chao(direcao)
 				aplicar_wall_jump(normal_da_ultima_parede)
 			
-			if not is_on_floor() and ray_cast_2d.is_colliding():
-				ani.play("parede")
-				ani.flip_h = false
+			if not is_on_floor() and DETECTOR_PAREDE_DIREITA.is_colliding():
+				ANIMACOES.play("parede")
+				ANIMACOES.flip_h = false
 			
-			elif not is_on_floor() and ray_cast_2d_2.is_colliding():
-				ani.play("parede")
-				ani.flip_h = true
-			
-			
-			
-
+			elif not is_on_floor() and DETECTOR_PAREDE_ESQUERDA.is_colliding():
+				ANIMACOES.play("parede")
+				ANIMACOES.flip_h = true
+	
 	move_and_slide() # mova o personagem
 	
 	if (estava_no_chao == is_on_floor()) and (not is_on_floor()):
-		pulo_coyote_timer.start()
+		PULO_COYOTE_TIMER.start()
 	
-	elif ((estava_na_parede_esquerda == ray_cast_2d.is_colliding()) and (not ray_cast_2d.is_colliding())) or ((estava_na_parede_direita == ray_cast_2d_2.is_colliding()) and (not ray_cast_2d_2.is_colliding())):
-		wall_jump_timer.start()
+	elif ((estava_na_parede_esquerda == DETECTOR_PAREDE_DIREITA.is_colliding()) and (not DETECTOR_PAREDE_DIREITA.is_colliding())) or ((estava_na_parede_direita == DETECTOR_PAREDE_ESQUERDA.is_colliding()) and (not DETECTOR_PAREDE_ESQUERDA.is_colliding())):
+		WALL_JUMP_TIMER.start()
 
+
+func _on_zona_da_morte_body_entered(_body: Node2D) -> void:
+	# ADICIONAR ANIMAÇÃO DE MORTE AQUI
+	global_position = ULTIMO_CHECKPOINT
 
 
 func aplicar_gravidade(delta, descer_devagar):
@@ -137,7 +145,7 @@ func aplicar_wall_jump(normal_da_ultima_parede):
 
 
 func aplicar_pulo():
-	if Input.is_action_just_pressed("pular") and (is_on_floor() or pulo_coyote_timer.time_left > 0):
+	if Input.is_action_just_pressed("pular") and (is_on_floor() or PULO_COYOTE_TIMER.time_left > 0):
 		velocity.y = VELOCIDADE_PULO
 
 
@@ -147,7 +155,7 @@ func aplica_pulo_ajustavel():
 
 
 func buffer_pulo():
-	if Input.is_action_just_pressed("pular") and shape_cast_2d.is_colliding() and velocity.y > 0:
+	if Input.is_action_just_pressed("pular") and BUFFER_DE_PULO.is_colliding() and velocity.y > 0:
 		velocity.y = VELOCIDADE_PULO
 
 
@@ -172,3 +180,60 @@ func aplicar_friccao_fora_do_chao(direcao):
 	
 	elif !direcao and not is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, FRICCAO_FORA_DO_CHAO)
+
+
+func _on___checkpoint_1_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+	
+	ULTIMO_CHECKPOINT = Vector2(CHECKPOINT_1.global_position)
+	
+	# Checa se a transição de cenário já está acontecendo e a destroi se sim
+	if tween_atual:
+		tween_atual.kill()
+
+	tween_atual = create_tween() # Cria transição
+	tween_atual.set_parallel() # Faz com que as transições ocorrem simultaneamente e não sequencialmente
+	
+	# Transições:
+	transicao_cenario(tween_atual, $"../ParallaxBackground/Ceu/PlanoDeFundo", 1.5, 4.0)
+	transicao_cenario(tween_atual, $"../ParallaxBackground/1-GirassoisDeFrente/Sprite2D", 1.5, 4.0)
+	transicao_cenario(tween_atual, $"../ParallaxBackground/2-GirassoisDoMeio/Sprite2D", 1.5, 4.0)
+	transicao_cenario(tween_atual, $"../ParallaxBackground/3-GirassoisMaisDeFundo/Sprite2D", 1.5, 4.0)
+	
+	# Para quando o jogador voltar para o checkpoint:
+	transicao_reversa = !transicao_reversa
+	
+	CHECKPOINT_1.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_play_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT ATINGIDO DEPOIS
+	CHECKPOINT_2.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_video_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT NÃO ATINGIDO DEPOIS
+	CHECKPOINT_3.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_video_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT NÃO ATINGIDO DEPOIS
+
+
+func _on___checkpoint_2_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+	
+	ULTIMO_CHECKPOINT = Vector2(CHECKPOINT_2.global_position)
+	
+	CHECKPOINT_2.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_play_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT ATINGIDO DEPOIS
+	CHECKPOINT_1.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_video_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT NÃO ATINGIDO DEPOIS
+	CHECKPOINT_3.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_video_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT NÃO ATINGIDO DEPOIS
+
+
+func _on___checkpoint_3_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+	
+	ULTIMO_CHECKPOINT = Vector2(CHECKPOINT_3.global_position)
+	
+	CHECKPOINT_3.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_play_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT ATINGIDO DEPOIS
+	CHECKPOINT_1.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_video_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT NÃO ATINGIDO DEPOIS
+	CHECKPOINT_2.get_node("Sprite2D").texture = load("res://Assets/Imagens/celo_video_2.png") # TEMPORARIO! TROCAR POR ASSETS DE CHECKPOINT NÃO ATINGIDO DEPOIS
+
+func transicao_cenario(tween_atual: Tween, sprite: Node, tempo_transicao: float, desfoque_quant: float):
+	if !transicao_reversa:
+		tween_atual.tween_property(sprite.material, 'shader_parameter/desfoque_quant', desfoque_quant, tempo_transicao)
+		tween_atual.tween_property(sprite.material, 'shader_parameter/transicao', 1, tempo_transicao)
+	else:
+		tween_atual.tween_property(sprite.material, 'shader_parameter/desfoque_quant', 0, tempo_transicao)
+		tween_atual.tween_property(sprite.material, 'shader_parameter/transicao', 0, tempo_transicao)
