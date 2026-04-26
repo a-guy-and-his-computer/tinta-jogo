@@ -1,3 +1,4 @@
+Camera2D
 Button
 Sprite2D
 Node2D
@@ -11,4 +12,3 @@ CharacterBody2D
 Panel
 VBoxContainer
 Container
-Camera2D

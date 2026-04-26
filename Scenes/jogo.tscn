@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7eec08eeni33" path="res://Assets/Imagens/gira_final.png" id="7_4aaip"]
 [ext_resource type="Shader" uid="uid://cge5puttavi24" path="res://Shaders/Blur/blur_atras.gdshader" id="7_8ihgy"]
 [ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/celo_video_1.png" id="8_nyb5w"]
+[ext_resource type="PackedScene" uid="uid://bcr6gc6fkjwdw" path="res://Scenes/camera.tscn" id="10_4aaip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rokwo"]
 texture = ExtResource("2_82dp6")
@@ -217,6 +218,9 @@ position = Vector2(943, 404)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDaMorte" unique_id=1205391872]
 shape = SubResource("WorldBoundaryShape2D_82dp6")
+
+[node name="Camera" parent="." unique_id=1406101806 instance=ExtResource("10_4aaip")]
+position = Vector2(323, 190)
 
 [connection signal="body_entered" from="Checkpoints/1 - Checkpoint1" to="Player" method="_on___checkpoint_1_body_entered"]
 [connection signal="body_entered" from="Checkpoints/2 - Checkpoint2" to="Player" method="_on___checkpoint_2_body_entered"]

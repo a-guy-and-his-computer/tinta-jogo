@@ -1,10 +1,6 @@
-res://Scenes/jogo.tscn
 res://Shaders/background.gdshader
-res://Shaders/Blur/blur_atras.gdshader
-res://Shaders/Blur/blur_gaussiano.gdshader
-res://Shaders/Blur/blur_horizontal.gdshader
-res://Shaders/Blur/blur_3por3.gdshader
-res://Shaders/Blur/blur_vertical.gdshader
-res://Scripts/player.gd
-res://Scripts/jogo.gd
+res://camera.tscn
 res://Scenes/player.tscn
+res://Scenes/camera.tscn
+res://Scripts/camera.gd
+res://Scenes/jogo.tscn
