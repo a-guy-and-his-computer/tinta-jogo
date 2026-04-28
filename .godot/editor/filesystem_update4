@@ -1,6 +1,2 @@
-res://Shaders/background.gdshader
-res://camera.tscn
-res://Scenes/player.tscn
 res://Scenes/camera.tscn
-res://Scripts/camera.gd
-res://Scenes/jogo.tscn
+res://Shaders/background.gdshader

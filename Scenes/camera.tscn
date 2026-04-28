@@ -3,5 +3,9 @@
 [ext_resource type="Script" uid="uid://dkyow2q5wp7sn" path="res://Scripts/camera.gd" id="1_375tr"]
 
 [node name="Camera" type="Camera2D" unique_id=1406101806]
+limit_left = 0
+limit_right = 1970
 limit_bottom = 378
+limit_smoothed = true
+position_smoothing_enabled = true
 script = ExtResource("1_375tr")
