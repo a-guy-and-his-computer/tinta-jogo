@@ -1,2 +1,3 @@
 res://Scenes/camera.tscn
 res://Shaders/background.gdshader
+res://Scripts/player.gd
