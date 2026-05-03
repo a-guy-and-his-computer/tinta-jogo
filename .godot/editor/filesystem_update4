@@ -1,4 +1,3 @@
 res://Scenes/jogo.tscn
 res://Shaders/background.gdshader
-res://Shaders/tela.gdshader
-res://Scripts/jogo.gd
+res://Scripts/player.gd
