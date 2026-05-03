@@ -10,6 +10,7 @@
 [ext_resource type="Shader" uid="uid://cge5puttavi24" path="res://Shaders/Blur/blur_atras.gdshader" id="7_8ihgy"]
 [ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/celo_video_1.png" id="8_nyb5w"]
 [ext_resource type="PackedScene" uid="uid://bcr6gc6fkjwdw" path="res://Scenes/camera.tscn" id="10_4aaip"]
+[ext_resource type="Shader" uid="uid://c57gqm80u1r8q" path="res://Shaders/tela.gdshader" id="11_gyvnm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rokwo"]
 texture = ExtResource("2_82dp6")
@@ -109,6 +110,19 @@ size = Vector2(468, 39)
 size = Vector2(48, 419)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_82dp6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ru4ac"]
+shader = ExtResource("11_gyvnm")
+shader_parameter/nitidez_ligado = true
+shader_parameter/quant_nitidez = 0.362000017195
+shader_parameter/grading_ligado = true
+shader_parameter/brilho = 0.0
+shader_parameter/contraste = 1.0
+shader_parameter/saturacao = 1.0
+shader_parameter/vignette_ligado = true
+shader_parameter/intensidade = 0.0
+shader_parameter/suavidade = 1.0
+shader_parameter/cor_vignette = Color(0, 0, 0, 1)
 
 [node name="Jogo" type="Node2D" unique_id=1899907101]
 script = ExtResource("1_rokwo")
@@ -221,6 +235,16 @@ shape = SubResource("WorldBoundaryShape2D_82dp6")
 
 [node name="Camera" parent="." unique_id=1406101806 instance=ExtResource("10_4aaip")]
 position = Vector2(323, 190)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=963767661]
+
+[node name="Tela" type="ColorRect" parent="CanvasLayer" unique_id=1701084181]
+material = SubResource("ShaderMaterial_ru4ac")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="body_entered" from="Checkpoints/1 - Checkpoint1" to="Player" method="_on___checkpoint_1_body_entered"]
 [connection signal="body_entered" from="Checkpoints/2 - Checkpoint2" to="Player" method="_on___checkpoint_2_body_entered"]
