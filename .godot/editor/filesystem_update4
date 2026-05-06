@@ -1,3 +1,8 @@
 res://Scenes/muitos_espinhos.tscn
 res://Shaders/background.gdshader
 res://Shaders/tela.gdshader
+res://Scenes/obstaculo_hor.tscn
+res://Scripts/obstaculo_hor.gd
+res://Scenes/jogo.tscn
+res://Scenes/obstaculo_ver.tscn
+res://Scripts/obstaculo_ver.gd

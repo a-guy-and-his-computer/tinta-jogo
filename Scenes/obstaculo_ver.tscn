@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://daf3x3y3de5hc"]
+
+[ext_resource type="Texture2D" uid="uid://dphnyckqpwdrx" path="res://Assets/Imagens/rabisco obistaculo2.png" id="1_l2mco"]
+[ext_resource type="Script" uid="uid://dxn3v07gax1oh" path="res://Scripts/obstaculo_ver.gd" id="1_pmfoo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmfoo"]
+size = Vector2(26, 18)
+
+[node name="obstaculo_ver" type="Area2D" unique_id=977309680]
+script = ExtResource("1_pmfoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=543069642]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_pmfoo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168284098]
+position = Vector2(4, -19)
+texture = ExtResource("1_l2mco")
+
+[connection signal="body_entered" from="." to="." method="_on_obstaculo_ver_body_entered"]
