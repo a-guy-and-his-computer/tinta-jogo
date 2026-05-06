@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c358nehea43s3"
-path="res://.godot/imported/bolinha spritep ulo.png-a6ea908a3cd531c8bb8bf79f811f51ec.ctex"
+uid="uid://cvgvxxda8s764"
+path="res://.godot/imported/bolinha parada anime-Sheet.png-84a669b368cb70bc8ad8b07951478368.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/bolinha spritep ulo.png"
-dest_files=["res://.godot/imported/bolinha spritep ulo.png-a6ea908a3cd531c8bb8bf79f811f51ec.ctex"]
+source_file="res://Assets/Imagens/bolinha parada anime-Sheet.png"
+dest_files=["res://.godot/imported/bolinha parada anime-Sheet.png-84a669b368cb70bc8ad8b07951478368.ctex"]
 
 [params]
 

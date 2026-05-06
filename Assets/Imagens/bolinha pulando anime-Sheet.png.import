@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxj61ccqp8u3w"
-path="res://.godot/imported/bolinha parede sprite.png-354c2ababe893939542797721a8675d5.ctex"
+uid="uid://dlhmsmc86rhv0"
+path="res://.godot/imported/bolinha pulando anime-Sheet.png-2dc2a5485bd8893a8eef1a349b946a29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/bolinha parede sprite.png"
-dest_files=["res://.godot/imported/bolinha parede sprite.png-354c2ababe893939542797721a8675d5.ctex"]
+source_file="res://Assets/Imagens/bolinha pulando anime-Sheet.png"
+dest_files=["res://.godot/imported/bolinha pulando anime-Sheet.png-2dc2a5485bd8893a8eef1a349b946a29.ctex"]
 
 [params]
 

@@ -78,8 +78,13 @@ func _physics_process(delta: float) -> void:
 				aplicar_friccao_fora_do_chao(direcao)
 				buffer_pulo()
 
-				if not is_on_floor():
+				if not is_on_floor() and velocity.y < 0:
 					ANIMACOES.play("pulando")
+					ANIMACOES.flip_v = false
+				elif not is_on_floor() and velocity.y > 0 or PULOS_RESTANTES == 0 :
+					ANIMACOES.play("caindo")
+					ANIMACOES.flip_v = false
+					
 
 
 		ESTADOS.NO_CHAO:
@@ -97,14 +102,19 @@ func _physics_process(delta: float) -> void:
 				aplicar_pulo()
 				aplica_pulo_ajustavel()
 
+			
 			if is_on_floor() and direcao == 0:
 				ANIMACOES.play("parado")
+				ANIMACOES.flip_v = false
 			elif is_on_floor() and direcao < 0:
 				ANIMACOES.flip_h = true
+				ANIMACOES.flip_v = false
 				ANIMACOES.play("andando")
 			elif is_on_floor() and direcao > 0:
 				ANIMACOES.flip_h = false
+				ANIMACOES.flip_v = false
 				ANIMACOES.play("andando")
+
 
 
 		ESTADOS.NA_PAREDE:
@@ -122,6 +132,7 @@ func _physics_process(delta: float) -> void:
 
 				if Input.is_action_pressed("travar") and TEMPO_TRAVADO_PAREDE < LIMITE_TEMPO:
 					velocity.y = 0
+					velocity.x = 0
 					TEMPO_TRAVADO_PAREDE += delta
 					ULTIMA_POS_Y_PAREDE = global_position.y
 
@@ -137,12 +148,29 @@ func _physics_process(delta: float) -> void:
 				aplicar_friccao_fora_do_chao(direcao)
 				aplicar_wall_jump(normal_da_ultima_parede)
 
-			if not is_on_floor() and DETECTOR_PAREDE_DIREITA.is_colliding():
-				ANIMACOES.play("parede")
+			if not is_on_floor() and DETECTOR_PAREDE_DIREITA.is_colliding() and velocity.y == 0:
+				ANIMACOES.play("parada na parede ")
 				ANIMACOES.flip_h = false
-			elif not is_on_floor() and DETECTOR_PAREDE_ESQUERDA.is_colliding():
-				ANIMACOES.play("parede")
+			elif not is_on_floor() and DETECTOR_PAREDE_ESQUERDA.is_colliding() and velocity.y == 0:
+				ANIMACOES.play("parada na parede ")
 				ANIMACOES.flip_h = true
+			elif not is_on_floor() and DETECTOR_PAREDE_DIREITA.is_colliding() and velocity.y < 0:
+				ANIMACOES.play("andando parede")
+				ANIMACOES.flip_h = false
+				ANIMACOES.flip_v = false
+			elif not is_on_floor() and DETECTOR_PAREDE_ESQUERDA.is_colliding() and velocity.y < 0:
+				ANIMACOES.play("andando parede")
+				ANIMACOES.flip_h = true
+				ANIMACOES.flip_v = false
+			elif not is_on_floor() and DETECTOR_PAREDE_DIREITA.is_colliding() and velocity.y > 0:
+				ANIMACOES.play("andando parede")
+				ANIMACOES.flip_h = false
+				ANIMACOES.flip_v = true
+			elif not is_on_floor() and DETECTOR_PAREDE_ESQUERDA.is_colliding() and velocity.y > 0:
+				ANIMACOES.play("andando parede")
+				ANIMACOES.flip_h = true
+				ANIMACOES.flip_v = true
+				
 
 	move_and_slide()
 

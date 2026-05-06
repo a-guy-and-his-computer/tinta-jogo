@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtgur8rgvswj0"
-path="res://.godot/imported/bolina parada sprite.png-002f06022fc4899fe9ce8070c2e17af7.ctex"
+uid="uid://cn0upmyauios1"
+path="res://.godot/imported/bolinha parede anime-Sheet.png-b0a7de35491094995770516b22073867.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/bolina parada sprite.png"
-dest_files=["res://.godot/imported/bolina parada sprite.png-002f06022fc4899fe9ce8070c2e17af7.ctex"]
+source_file="res://Assets/Imagens/bolinha parede anime-Sheet.png"
+dest_files=["res://.godot/imported/bolinha parede anime-Sheet.png-b0a7de35491094995770516b22073867.ctex"]
 
 [params]
 
