@@ -139,13 +139,15 @@ func _physics_process(delta: float) -> void:
 				elif Input.is_action_pressed("subir") and PIXELS_SUBIDOS_PAREDE < LIMITE_SUBIDA_PAREDE:
 					velocity.y = VELOCIDADE_SUBIDA_PAREDE
 					PIXELS_SUBIDOS_PAREDE += abs(velocity.y * delta)
+					aplicar_aceleracao_fora_do_chao(direcao, delta)
+					aplicar_friccao_fora_do_chao(direcao)
 
 				else:
 					descer_devagar = true
 					aplicar_gravidade(delta, descer_devagar)
-
-				aplicar_aceleracao_fora_do_chao(direcao, delta)
-				aplicar_friccao_fora_do_chao(direcao)
+					aplicar_aceleracao_fora_do_chao(direcao, delta)
+					aplicar_friccao_fora_do_chao(direcao)
+				
 				aplicar_wall_jump(normal_da_ultima_parede)
 
 			if not is_on_floor() and DETECTOR_PAREDE_DIREITA.is_colliding() and velocity.y == 0:

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cnsj5l8ckn8vy"]
+
+[ext_resource type="Script" uid="uid://dclpjprpot1of" path="res://Scripts/muitos_espinhos.gd" id="1_nsex1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ukie"]
+size = Vector2(71, 33)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ppxpq"]
+load_path = "res://.godot/imported/espinhos_muitos.PNG-df5e8d857cec993510e405f0aa4088e2.ctex"
+
+[node name="muitos_espinhos" type="Area2D" unique_id=349824853]
+script = ExtResource("1_nsex1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=434148863]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_2ukie")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=324297620]
+position = Vector2(2.000001, -0.99999976)
+scale = Vector2(0.9338235, 0.86538464)
+texture = SubResource("CompressedTexture2D_ppxpq")
+
+[connection signal="body_entered" from="." to="." method="_on_muitos_espinhos_body_entered"]

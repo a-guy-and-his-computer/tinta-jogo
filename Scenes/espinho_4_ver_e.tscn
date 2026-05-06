@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://brvjwfmd5bh7a"]
+
+[ext_resource type="Script" uid="uid://cht5atapj45cr" path="res://Scripts/espinho_4_ver_e.gd" id="1_jhuwi"]
+[ext_resource type="Texture2D" uid="uid://tawbsb7qjerw" path="res://Assets/Imagens/espinhos4ve.png" id="2_jhuwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhuwi"]
+size = Vector2(17, 42)
+
+[node name="espinho_4_ver_e" type="Area2D" unique_id=389960093]
+script = ExtResource("1_jhuwi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285994688]
+position = Vector2(-4.5, 1)
+shape = SubResource("RectangleShape2D_jhuwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=599486065]
+position = Vector2(-84, -3)
+texture = ExtResource("2_jhuwi")
+
+[connection signal="body_entered" from="." to="." method="_on_espinhos_4_ver_e_body_entered"]
