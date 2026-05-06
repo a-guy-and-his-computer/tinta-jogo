@@ -1,8 +1,6 @@
-res://Scenes/muitos_espinhos.tscn
+res://Scenes/van_gogh.tscn
 res://Shaders/background.gdshader
+res://Shaders/luz_do_sol.gdshader
 res://Shaders/tela.gdshader
-res://Scenes/obstaculo_hor.tscn
-res://Scripts/obstaculo_hor.gd
-res://Scenes/jogo.tscn
-res://Scenes/obstaculo_ver.tscn
-res://Scripts/obstaculo_ver.gd
+res://Scenes/menu.tscn
+res://Scripts/menu.gd
