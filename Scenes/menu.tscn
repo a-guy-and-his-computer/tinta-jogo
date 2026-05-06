@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://clat4iual0f8u"]
 
 [ext_resource type="Script" uid="uid://b83bn25ce3v5o" path="res://Scripts/menu.gd" id="1_1rerr"]
-[ext_resource type="Texture2D" uid="uid://dc4u7fpflp5vt" path="res://Assets/Imagens/image.png" id="2_xhh6f"]
-[ext_resource type="Texture2D" uid="uid://cu67u7pcij3k0" path="res://Assets/Imagens/jogar_2.png" id="3_6swd7"]
-[ext_resource type="Texture2D" uid="uid://xb2qg7na1yy1" path="res://Assets/Imagens/saida_2.png" id="4_7qvly"]
-[ext_resource type="Texture2D" uid="uid://cyuumt8nahl1w" path="res://Assets/Imagens/celo_controles_1.png" id="5_rfqti"]
-[ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/celo_video_1.png" id="6_g8i7c"]
-[ext_resource type="Texture2D" uid="uid://cc3lia12cwd55" path="res://Assets/Imagens/celo_musica111.png" id="7_23t3j"]
-[ext_resource type="Texture2D" uid="uid://cooyt8qwt0u2y" path="res://Assets/Imagens/celo_noite_estrelada_1.png" id="8_8ph6h"]
-[ext_resource type="Texture2D" uid="uid://dglfwj2e052ja" path="res://Assets/Imagens/celo_dali_1.png" id="9_5ti5v"]
+[ext_resource type="Texture2D" uid="uid://dc4u7fpflp5vt" path="res://Assets/Imagens/Menus/image.png" id="2_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://cu67u7pcij3k0" path="res://Assets/Imagens/Menus/jogar_2.png" id="3_6swd7"]
+[ext_resource type="Texture2D" uid="uid://xb2qg7na1yy1" path="res://Assets/Imagens/Menus/saida_2.png" id="4_7qvly"]
+[ext_resource type="Texture2D" uid="uid://cyuumt8nahl1w" path="res://Assets/Imagens/Menus/celo_controles_1.png" id="5_rfqti"]
+[ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/Menus/celo_video_1.png" id="6_g8i7c"]
+[ext_resource type="Texture2D" uid="uid://cc3lia12cwd55" path="res://Assets/Imagens/Menus/celo_musica111.png" id="7_23t3j"]
+[ext_resource type="Texture2D" uid="uid://cooyt8qwt0u2y" path="res://Assets/Imagens/Menus/celo_noite_estrelada_1.png" id="8_8ph6h"]
+[ext_resource type="Texture2D" uid="uid://dglfwj2e052ja" path="res://Assets/Imagens/Menus/celo_dali_1.png" id="9_5ti5v"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhh6f"]
 texture = ExtResource("2_xhh6f")
