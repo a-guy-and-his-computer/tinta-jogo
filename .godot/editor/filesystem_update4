@@ -2,5 +2,5 @@ res://Scenes/van_gogh.tscn
 res://Shaders/background.gdshader
 res://Shaders/luz_do_sol.gdshader
 res://Shaders/tela.gdshader
-res://Scenes/menu.tscn
-res://Scripts/menu.gd
+res://Scenes/tela_pausa.tscn
+res://Scripts/tela_pausa.gd

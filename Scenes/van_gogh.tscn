@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/Menus/celo_video_1.png" id="18_k15vw"]
 [ext_resource type="PackedScene" uid="uid://bcr6gc6fkjwdw" path="res://Scenes/camera.tscn" id="19_clagl"]
 [ext_resource type="Shader" uid="uid://c57gqm80u1r8q" path="res://Shaders/tela.gdshader" id="20_jxon8"]
+[ext_resource type="PackedScene" uid="uid://3i7vc66vs4s2" path="res://Scenes/tela_pausa.tscn" id="21_or7qc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rokwo"]
 texture = ExtResource("2_or7qc")
@@ -567,6 +568,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="tela_pausa" parent="." unique_id=222500287 instance=ExtResource("21_or7qc")]
+layer = 11
 
 [connection signal="body_entered" from="Checkpoints/1 - Checkpoint1" to="Player" method="_on___checkpoint_1_body_entered"]
 [connection signal="body_entered" from="Checkpoints/2 - Checkpoint2" to="Player" method="_on___checkpoint_2_body_entered"]
