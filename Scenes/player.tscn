@@ -1,11 +1,30 @@
 [gd_scene format=3 uid="uid://c3tjeox1cjs71"]
 
 [ext_resource type="Script" uid="uid://c20g6lulfpgnk" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Shader" uid="uid://b2ca0fifitcg4" path="res://Shaders/shader_geral.gdshader" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://uoqjg6y48731" path="res://Assets/Imagens/bolinha andando anime-Sheet.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://cvgvxxda8s764" path="res://Assets/Imagens/bolinha parada anime-Sheet.png" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://b7bun4n62uifj" path="res://Assets/Imagens/bolinha andando parede anima-Sheet.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dlhmsmc86rhv0" path="res://Assets/Imagens/bolinha pulando anime-Sheet.png" id="5_fkybt"]
 [ext_resource type="Texture2D" uid="uid://wdlgcv0gxiec" path="res://Assets/Imagens/bolinha parada parede anima (1)-Sheet.png" id="5_x3wgy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8erm5"]
+shader = ExtResource("2_3smsa")
+shader_parameter/nitidez_ligado = true
+shader_parameter/tamanho_tela_px = Vector2(640, 360)
+shader_parameter/quant_nitidez = 0.362
+shader_parameter/grading_ligado = false
+shader_parameter/brilho = 0.0
+shader_parameter/contraste = 1.0
+shader_parameter/saturacao = 1.0
+shader_parameter/noite_ligada = true
+shader_parameter/intens_noite = 0.7670000364325
+shader_parameter/cor_noite = Color(0.10980392, 0.105882354, 0.5372549, 0.6627451)
+shader_parameter/inversao_ligada = false
+shader_parameter/vignette_ligado = false
+shader_parameter/intensidade = 0.0
+shader_parameter/suavidade = 1.0
+shader_parameter/cor_vignette = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("2_fkybt")
@@ -191,6 +210,7 @@ floor_snap_length = 4.0
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=969933900]
+material = SubResource("ShaderMaterial_8erm5")
 position = Vector2(-2.9802322e-08, 1.4901161e-08)
 scale = Vector2(0.32853147, 0.34318787)
 sprite_frames = SubResource("SpriteFrames_6t5aa")

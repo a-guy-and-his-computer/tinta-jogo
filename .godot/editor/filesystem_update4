@@ -1,6 +1,3 @@
 res://Scenes/van_gogh.tscn
-res://Shaders/background.gdshader
-res://Shaders/luz_do_sol.gdshader
-res://Shaders/tela.gdshader
-res://Scenes/menu.tscn
-res://Scripts/menu.gd
+res://Shaders/shader_geral.gdshader
+res://Scenes/player.tscn
