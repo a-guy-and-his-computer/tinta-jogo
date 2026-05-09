@@ -1,3 +1,1 @@
-res://Scenes/van_gogh.tscn
-res://Shaders/shader_geral.gdshader
-res://Scenes/player.tscn
+res://Scripts/player.gd

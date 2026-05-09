@@ -105,6 +105,11 @@ void fragment() {
 	
 	vec3 cor = nitidez(COLOR.rgb, TEXTURE, UV);
 	cor = color_grading(cor);
+	
+	if (inversao_ligada){
+		cor = 1. - cor;
+	}
+	
 	vec4 cor_final = noite(vec4(cor, alpha));
 	cor_final = vignette(cor_final, UV);
 	

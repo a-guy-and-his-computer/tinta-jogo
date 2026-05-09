@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cpwu7v7naef61" path="res://Assets/Imagens/VanGogh/Girassol/Ceul.png" id="7_glqb3"]
 [ext_resource type="Texture2D" uid="uid://c0eorbqumvoaa" path="res://Assets/Imagens/VanGogh/Girassol/ceu_final.png" id="8_w2cmq"]
 [ext_resource type="Texture2D" uid="uid://cj1l0awkuedau" path="res://Assets/Imagens/VanGogh/Girassol/sol.png" id="9_icvh0"]
-[ext_resource type="Shader" uid="uid://d1fpe4yuw77y5" path="res://Shaders/VanGogh/luz_do_sol.gdshader" id="10_3cg0o"]
+[ext_resource type="Shader" uid="uid://d1fpe4yuw77y5" path="res://Shaders/luz_do_sol.gdshader" id="10_3cg0o"]
 [ext_resource type="Texture2D" uid="uid://cjw65rnl8jk31" path="res://Shaders/icon.svg" id="11_1fbrp"]
 [ext_resource type="Texture2D" uid="uid://b8grvxc3sk73i" path="res://Shaders/brilho.png" id="12_f1n1f"]
 [ext_resource type="Texture2D" uid="uid://7eec08eeni33" path="res://Assets/Imagens/VanGogh/Girassol/gira_final.png" id="13_ofla7"]
@@ -21,8 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/Menus/celo_video_1.png" id="18_k15vw"]
 [ext_resource type="Texture2D" uid="uid://bepuaycux07dx" path="res://Assets/Imagens/VanGogh/Noite/montanha.png" id="18_mwffj"]
 [ext_resource type="PackedScene" uid="uid://bcr6gc6fkjwdw" path="res://Scenes/camera.tscn" id="19_clagl"]
+[ext_resource type="Texture2D" uid="uid://duvouwcs2iq5m" path="res://Assets/Imagens/luz.png" id="19_t04cu"]
 [ext_resource type="Shader" uid="uid://c57gqm80u1r8q" path="res://Shaders/tela.gdshader" id="20_jxon8"]
 [ext_resource type="PackedScene" uid="uid://3i7vc66vs4s2" path="res://Scenes/tela_pausa.tscn" id="21_or7qc"]
+[ext_resource type="Script" uid="uid://bxg0c43v10j5u" path="res://Scripts/checkpoint.gd" id="22_6idp7"]
+[ext_resource type="Script" uid="uid://buinebehiap4g" path="res://Scripts/zona_da_morte.gd" id="23_glqb3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mwffj"]
 shader = ExtResource("15_5usdp")
@@ -34,7 +37,7 @@ shader_parameter/brilho = 0.0
 shader_parameter/contraste = 1.0
 shader_parameter/saturacao = 1.0
 shader_parameter/noite_ligada = true
-shader_parameter/intens_noite = 0.7670000364325
+shader_parameter/intens_noite = 0.4750000225625
 shader_parameter/cor_noite = Color(0.10980392, 0.105882354, 0.5372549, 0.6627451)
 shader_parameter/inversao_ligada = false
 shader_parameter/vignette_ligado = false
@@ -439,6 +442,24 @@ shader_parameter/intensidade = 0.0
 shader_parameter/suavidade = 1.0
 shader_parameter/cor_vignette = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6idp7"]
+shader = ExtResource("15_5usdp")
+shader_parameter/nitidez_ligado = true
+shader_parameter/tamanho_tela_px = Vector2(640, 360)
+shader_parameter/quant_nitidez = 0.362
+shader_parameter/grading_ligado = false
+shader_parameter/brilho = 0.0
+shader_parameter/contraste = 1.0
+shader_parameter/saturacao = 1.0
+shader_parameter/noite_ligada = true
+shader_parameter/intens_noite = 0.558000026505
+shader_parameter/cor_noite = Color(0.10980392, 0.105882354, 0.5372549, 0.6627451)
+shader_parameter/inversao_ligada = false
+shader_parameter/vignette_ligado = false
+shader_parameter/intensidade = 0.0
+shader_parameter/suavidade = 1.0
+shader_parameter/cor_vignette = Color(0, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwcib"]
 size = Vector2(449, 58)
 
@@ -701,56 +722,75 @@ position = Vector2(-149.84087, -94.22224)
 scale = Vector2(0.018257584, 0.018463567)
 texture = ExtResource("12_f1n1f")
 
+[node name="Lustre" type="Sprite2D" parent="ParallaxBackgroundNoite/Chao/PlanoDeFundo" unique_id=1428908918]
+material = SubResource("ShaderMaterial_6idp7")
+position = Vector2(-148.94897, 4.4444456)
+scale = Vector2(2, 2)
+texture = ExtResource("19_t04cu")
+
+[node name="Luz15" type="Sprite2D" parent="ParallaxBackgroundNoite/Chao/PlanoDeFundo/Lustre" unique_id=191295011]
+modulate = Color(17.976582, 16.920147, 0, 0.5803922)
+material = SubResource("CanvasItemMaterial_w81ul")
+position = Vector2(-2.6757288, -0.44444275)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_f1n1f")
+
 [node name="Checkpoints" type="Node2D" parent="." unique_id=608496253]
 visible = false
 
-[node name="1 - Checkpoint1" type="Area2D" parent="Checkpoints" unique_id=230867745]
+[node name="1 - Checkpoint" type="Area2D" parent="Checkpoints" unique_id=230867745]
 position = Vector2(564, 314)
+script = ExtResource("22_6idp7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/1 - Checkpoint1" unique_id=1980047125]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/1 - Checkpoint" unique_id=1980047125]
 position = Vector2(5, -214.5)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_cwcib")
 
-[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/1 - Checkpoint1" unique_id=1421162282]
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/1 - Checkpoint" unique_id=1421162282]
 modulate = Color(1, 1, 1, 0.49803922)
 material = SubResource("ShaderMaterial_nyb5w")
 position = Vector2(7.4999905, -25.499998)
 scale = Vector2(3.3999956, 19.000002)
 texture = ExtResource("18_k15vw")
 
-[node name="2 - Checkpoint2" type="Area2D" parent="Checkpoints" unique_id=1325008611]
+[node name="2 - Checkpoint" type="Area2D" parent="Checkpoints" unique_id=1325008611]
 position = Vector2(1255, 167)
+script = ExtResource("22_6idp7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/2 - Checkpoint2" unique_id=1586702138]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/2 - Checkpoint" unique_id=1586702138]
 position = Vector2(0.5, -209)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_4aaip")
 
-[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/2 - Checkpoint2" unique_id=1094988822]
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/2 - Checkpoint" unique_id=1094988822]
 modulate = Color(1, 1, 1, 0.49803922)
 position = Vector2(9.000002, 0.5000043)
 scale = Vector2(3.999999, 18.999998)
 texture = ExtResource("18_k15vw")
 
-[node name="3 - Checkpoint3" type="Area2D" parent="Checkpoints" unique_id=680899229]
+[node name="3 - Checkpoint" type="Area2D" parent="Checkpoints" unique_id=680899229]
 position = Vector2(1927, -68)
+script = ExtResource("22_6idp7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/3 - Checkpoint3" unique_id=1285852525]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/3 - Checkpoint" unique_id=1285852525]
 position = Vector2(1, -189.5)
 shape = SubResource("RectangleShape2D_82dp6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/3 - Checkpoint3" unique_id=1697657155]
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoints/3 - Checkpoint" unique_id=1697657155]
 modulate = Color(1, 1, 1, 0.49803922)
 position = Vector2(10.750028, -10.500001)
 scale = Vector2(3.0999985, 17.00001)
 texture = ExtResource("18_k15vw")
 
-[node name="ZonaDaMorte" type="Area2D" parent="." unique_id=766702045]
+[node name="ZonasDaMorte" type="Node2D" parent="." unique_id=1387067563]
+
+[node name="ZonaDaMorte" type="Area2D" parent="ZonasDaMorte" unique_id=766702045]
 visible = false
 position = Vector2(943, 404)
+script = ExtResource("23_glqb3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDaMorte" unique_id=1205391872]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasDaMorte/ZonaDaMorte" unique_id=1205391872]
 shape = SubResource("WorldBoundaryShape2D_82dp6")
 
 [node name="Camera" parent="." unique_id=1406101806 instance=ExtResource("19_clagl")]
@@ -772,8 +812,4 @@ metadata/_edit_use_anchors_ = true
 
 [node name="tela_pausa" parent="." unique_id=222500287 instance=ExtResource("21_or7qc")]
 layer = 11
-
-[connection signal="body_entered" from="Checkpoints/1 - Checkpoint1" to="Player" method="_on___checkpoint_1_body_entered"]
-[connection signal="body_entered" from="Checkpoints/2 - Checkpoint2" to="Player" method="_on___checkpoint_2_body_entered"]
-[connection signal="body_entered" from="Checkpoints/3 - Checkpoint3" to="Player" method="_on___checkpoint_3_body_entered"]
-[connection signal="body_entered" from="ZonaDaMorte" to="Player" method="_on_zona_da_morte_body_entered"]
+visible = false
