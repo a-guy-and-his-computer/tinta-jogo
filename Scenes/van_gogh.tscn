@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b8grvxc3sk73i" path="res://Shaders/brilho.png" id="12_f1n1f"]
 [ext_resource type="Texture2D" uid="uid://7eec08eeni33" path="res://Assets/Imagens/VanGogh/Girassol/gira_final.png" id="13_ofla7"]
 [ext_resource type="Texture2D" uid="uid://b4mgdpbyycnk6" path="res://Assets/Imagens/VanGogh/Noite/ceu.png" id="14_kjwy6"]
-[ext_resource type="Shader" uid="uid://b2ca0fifitcg4" path="res://Shaders/shader_geral.gdshader" id="15_5usdp"]
+[ext_resource type="Shader" path="res://Shaders/shader_geral.gdshader" id="15_5usdp"]
 [ext_resource type="Texture2D" uid="uid://lfg76ynkyjnk" path="res://Assets/Imagens/VanGogh/Noite/lua.png" id="15_x2wak"]
 [ext_resource type="Texture2D" uid="uid://byko8j0y0gsij" path="res://Assets/Imagens/VanGogh/Noite/chao.png" id="16_awvcp"]
 [ext_resource type="Shader" uid="uid://cge5puttavi24" path="res://Shaders/Blur/blur_atras.gdshader" id="17_0x4ic"]
