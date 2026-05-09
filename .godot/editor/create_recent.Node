@@ -1,3 +1,6 @@
+VBoxContainer
+RichTextLabel
+HBoxContainer
 Sprite2D
 Parallax2D
 SubViewport

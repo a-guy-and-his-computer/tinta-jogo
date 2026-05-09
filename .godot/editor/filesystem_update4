@@ -1,3 +1,6 @@
-res://Scenes/van_gogh.tscn
-res://Shaders/shader_geral.gdshader
-res://Scenes/player.tscn
+res://Scenes/tela_creditos.tscn
+res://Shaders/background.gdshader
+res://Shaders/luz_do_sol.gdshader
+res://Shaders/tela.gdshader
+res://Scripts/tela_creditos.gd
+res://Fonts/Licença_fontes/zf2334_that_s_all_right/License.txt
