@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b8grvxc3sk73i" path="res://Shaders/brilho.png" id="12_f1n1f"]
 [ext_resource type="Texture2D" uid="uid://7eec08eeni33" path="res://Assets/Imagens/VanGogh/Girassol/gira_final.png" id="13_ofla7"]
 [ext_resource type="Texture2D" uid="uid://b4mgdpbyycnk6" path="res://Assets/Imagens/VanGogh/Noite/ceu.png" id="14_kjwy6"]
-[ext_resource type="Shader" path="res://Shaders/shader_geral.gdshader" id="15_5usdp"]
+[ext_resource type="Shader" uid="uid://b2ca0fifitcg4" path="res://Shaders/shader_geral.gdshader" id="15_5usdp"]
 [ext_resource type="Texture2D" uid="uid://lfg76ynkyjnk" path="res://Assets/Imagens/VanGogh/Noite/lua.png" id="15_x2wak"]
 [ext_resource type="Texture2D" uid="uid://byko8j0y0gsij" path="res://Assets/Imagens/VanGogh/Noite/chao.png" id="16_awvcp"]
 [ext_resource type="Shader" uid="uid://cge5puttavi24" path="res://Shaders/Blur/blur_atras.gdshader" id="17_0x4ic"]
@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://duvouwcs2iq5m" path="res://Assets/Imagens/luz.png" id="19_t04cu"]
 [ext_resource type="Shader" uid="uid://c57gqm80u1r8q" path="res://Shaders/tela.gdshader" id="20_jxon8"]
 [ext_resource type="PackedScene" uid="uid://3i7vc66vs4s2" path="res://Scenes/tela_pausa.tscn" id="21_or7qc"]
-[ext_resource type="Script" uid="uid://bxg0c43v10j5u" path="res://Scripts/checkpoint.gd" id="22_6idp7"]
-[ext_resource type="Script" uid="uid://buinebehiap4g" path="res://Scripts/zona_da_morte.gd" id="23_glqb3"]
+[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="22_6idp7"]
+[ext_resource type="Script" path="res://Scripts/zona_da_morte.gd" id="23_glqb3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mwffj"]
 shader = ExtResource("15_5usdp")

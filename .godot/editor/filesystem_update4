@@ -1,1 +1,6 @@
-res://Scripts/player.gd
+res://Scenes/obstaculo_hor.tscn
+res://Shaders/background.gdshader
+res://Shaders/luz_do_sol.gdshader
+res://Shaders/tela.gdshader
+res://Scenes/obstaculo_ver.tscn
+res://Scenes/van_gogh.tscn
