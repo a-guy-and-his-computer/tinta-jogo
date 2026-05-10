@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://cpo7shu2rf7l5"]
 
-[ext_resource type="Script" uid="uid://dcb25djp7bt0w" path="res://Scripts/video_tela.gd" id="1_0wqe6"]
-[ext_resource type="Script" uid="uid://cpudkgjnxy54p" path="res://Scripts/configurações.gd" id="1_gklmi"]
-[ext_resource type="Script" uid="uid://d3nvny4rhr6kc" path="res://Scripts/volume_tela.gd" id="2_y7062"]
-[ext_resource type="Script" uid="uid://wmn2cgu3gtvq" path="res://Scripts/teclas_tela.gd" id="3_j20hr"]
+[ext_resource type="Script" uid="uid://cpudkgjnxy54p" path="res://Scripts/configuracoes.gd" id="1_qhknw"]
+[ext_resource type="Script" uid="uid://dcb25djp7bt0w" path="res://Scripts/video_tela.gd" id="2_dufsy"]
+[ext_resource type="Script" uid="uid://d3nvny4rhr6kc" path="res://Scripts/volume_tela.gd" id="3_s2p81"]
+[ext_resource type="Script" uid="uid://wmn2cgu3gtvq" path="res://Scripts/teclas_tela.gd" id="4_wowlb"]
 
-[node name="configurações" type="CanvasLayer" unique_id=1097869203 node_paths=PackedStringArray("menu", "video_settings", "volume_settings", "controls_settings", "back_button", "video_button", "volume_button", "controls_button")]
+[node name="configuracoes" type="CanvasLayer" unique_id=1097869203 node_paths=PackedStringArray("menu", "video_settings", "volume_settings", "controls_settings", "back_button", "video_button", "volume_button", "controls_button")]
 process_mode = 3
-script = ExtResource("1_gklmi")
+layer = 12
+script = ExtResource("1_qhknw")
 menu = NodePath("ColorRect/config_tela")
 video_settings = NodePath("ColorRect/video_tela")
 volume_settings = NodePath("ColorRect/volume_tela")
@@ -66,7 +67,7 @@ offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
-script = ExtResource("1_0wqe6")
+script = ExtResource("2_dufsy")
 fullscreen_check = NodePath("HBoxContainer2/CheckBox")
 
 [node name="Label" type="Label" parent="ColorRect/video_tela" unique_id=1518665575]
@@ -102,7 +103,7 @@ offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
-script = ExtResource("2_y7062")
+script = ExtResource("3_s2p81")
 master_slider = NodePath("HBoxContainer/HSlider")
 
 [node name="Label" type="Label" parent="ColorRect/volume_tela" unique_id=1441272751]
@@ -134,7 +135,7 @@ offset_bottom = 152.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
-script = ExtResource("3_j20hr")
+script = ExtResource("4_wowlb")
 direita_button = NodePath("direita/direita")
 esquerda_button = NodePath("esquerda/esquerda")
 pulo_button = NodePath("pulo/pulo")

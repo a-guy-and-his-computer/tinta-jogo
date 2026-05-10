@@ -29,6 +29,6 @@ func _on_button_2_pressed() -> void:
 func _on_settings_pressed():
 	visible = false
 	set_process_input(false)
-	var config = load("res://Scenes/configurações.tscn").instantiate()
+	var config = load("res://Scenes/configuracoes.tscn").instantiate()
 	get_tree().current_scene.add_child(config)
 	

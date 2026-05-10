@@ -1,9 +1,10 @@
-res://Scenes/player.tscn
-res://Shaders/shader_geral.gdshader
-res://Shaders/azulagem.gdshader
+res://Scripts/checkpoint.gd
 res://Shaders/luz_do_sol.gdshader
+res://Shaders/shader_geral.gdshader
 res://Shaders/tela.gdshader
-res://Scenes/van_gogh.tscn
-res://Shaders/inversao_cor.gdshader
-res://Scripts/inversao_cores.gd
-res://Shaders/cor_imutavel.gdshader
+res://Scenes/configurações.tscn
+res://Shaders/background.gdshader
+res://Scripts/configurações.gd
+res://Scenes/configuracoes.tscn
+res://Scripts/tela_pausa.gd
+res://Scenes/tela_pausa.tscn
