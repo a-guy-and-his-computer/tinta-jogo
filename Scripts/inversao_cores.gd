@@ -3,7 +3,6 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var tile_map_invertido: TileMapLayer = $TileMapInvertido
 @onready var tela: ColorRect = $CanvasLayer/Tela
-@onready var canvas_layer_imutavel: SubViewport = $CanvasLayerImutavel
 
 const max_raio = 2
 const velocidade = 2.5

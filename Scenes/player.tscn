@@ -17,8 +17,8 @@ shader_parameter/grading_ligado = false
 shader_parameter/brilho = 0.0
 shader_parameter/contraste = 1.0
 shader_parameter/saturacao = 1.0
-shader_parameter/noite_ligada = false
-shader_parameter/intens_noite = 0.7670000364325
+shader_parameter/noite_ligada = true
+shader_parameter/intens_noite = 0.44400002109
 shader_parameter/cor_noite = Color(0.10980392, 0.105882354, 0.5372549, 0.6627451)
 shader_parameter/azul_dia_ligado = false
 shader_parameter/azul_noite_ligado = false
@@ -225,6 +225,7 @@ autoplay = "parado"
 frame_progress = 0.42377478
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014310914]
+visible = false
 shape = SubResource("CapsuleShape2D_x3wgy")
 
 [node name="PuloCoyoteTimer" type="Timer" parent="." unique_id=1441104588]
@@ -236,13 +237,16 @@ wait_time = 0.271
 one_shot = true
 
 [node name="BufferDePulo" type="ShapeCast2D" parent="." unique_id=225072420]
+visible = false
 position = Vector2(0, 3.0000002)
 scale = Vector2(0.333, 0.02)
 shape = SubResource("CapsuleShape2D_3smsa")
 target_position = Vector2(0, 66.66669)
 
 [node name="DetectorParedeDireita" type="RayCast2D" parent="." unique_id=324653478]
+visible = false
 target_position = Vector2(4.07, 0)
 
 [node name="DetectorParedeEsquerda" type="RayCast2D" parent="." unique_id=2038466844]
+visible = false
 target_position = Vector2(-4.07, 0)
