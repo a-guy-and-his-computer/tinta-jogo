@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://y5ipba4q76ab" path="res://Scripts/tela_pausa.gd" id="1_tujhb"]
 
-[node name="tela_pausa" type="CanvasLayer" unique_id=222500287]
+[node name="tela_pausa" type="CanvasLayer" unique_id=222500287 node_paths=PackedStringArray("settings_button")]
 process_mode = 3
 script = ExtResource("1_tujhb")
+settings_button = NodePath("Button3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=743880874]
 offset_right = 640.0
@@ -14,17 +15,24 @@ color = Color(0, 0, 0, 0.60784316)
 
 [node name="Button" type="Button" parent="." unique_id=142433983]
 offset_left = 264.0
-offset_top = 155.0
+offset_top = 119.0
 offset_right = 367.0
-offset_bottom = 186.0
+offset_bottom = 150.0
 text = "CONTINUAR"
 
 [node name="Button2" type="Button" parent="." unique_id=1014632605]
 offset_left = 292.0
-offset_top = 216.0
+offset_top = 171.0
 offset_right = 335.0
-offset_bottom = 247.0
+offset_bottom = 202.0
 text = "SAIR"
+
+[node name="Button3" type="Button" parent="." unique_id=1172794185]
+offset_left = 243.0
+offset_top = 221.0
+offset_right = 385.0
+offset_bottom = 252.0
+text = "CONFIGURAÇÕES"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
