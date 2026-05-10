@@ -6,17 +6,14 @@ const MIN_DB = -60.0
 const MAX_DB = 0.0
 
 func _ready():
-	_sync_sliders()
-
+	await get_tree().process_frame
+	master_slider.value = GameState.master_volume
+	_set_volume("Master", GameState.master_volume)
 	master_slider.value_changed.connect(_on_master_volume_changed)
-
-func _sync_sliders():
-	master_slider.value = _db_to_slider(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
 
 func _slider_to_db(value: float) -> float:
 	if value <= 0.0:
 		return MIN_DB
-
 	var linear = value / 100.0
 	var db = linear_to_db(linear)
 	return clamp(db, MIN_DB, MAX_DB)
@@ -35,3 +32,5 @@ func _set_volume(bus_name: String, value: float):
 
 func _on_master_volume_changed(value: float):
 	_set_volume("Master", value)
+	GameState.master_volume = value
+	SaveManeger.save_settings()

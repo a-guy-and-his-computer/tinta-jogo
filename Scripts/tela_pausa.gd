@@ -30,5 +30,4 @@ func _on_settings_pressed():
 	visible = false
 	set_process_input(false)
 	var config = load("res://Scenes/configuracoes.tscn").instantiate()
-	get_tree().current_scene.add_child(config)
-	
+	get_tree().root.add_child(config)

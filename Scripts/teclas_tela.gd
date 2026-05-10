@@ -1,10 +1,12 @@
 extends VBoxContainer
+
 @export var direita_button: Button
 @export var esquerda_button: Button
 @export var pulo_button: Button
 @export var subir_button: Button
 @export var travar_button: Button
 @export var pausar_button: Button
+
 const ACTIONS = {
 	"direita": "direita",
 	"esquerda": "esquerda",
@@ -13,8 +15,12 @@ const ACTIONS = {
 	"travar": "travar",
 	"pausar": "pausar"
 }
+
 var waiting_for_input: String = ""
+
 func _ready():
+	await get_tree().process_frame
+	_apply_saved_keybinds()
 	_update_button_labels()
 	direita_button.pressed.connect(_on_rebind_button_pressed.bind("direita"))
 	esquerda_button.pressed.connect(_on_rebind_button_pressed.bind("esquerda"))
@@ -22,6 +28,26 @@ func _ready():
 	subir_button.pressed.connect(_on_rebind_button_pressed.bind("subir"))
 	travar_button.pressed.connect(_on_rebind_button_pressed.bind("travar"))
 	pausar_button.pressed.connect(_on_rebind_button_pressed.bind("pausar"))
+
+func _apply_saved_keybinds():
+	for key in ACTIONS:
+		var action_name = ACTIONS[key]
+		var keycode = GameState.keybinds.get(action_name, -1)
+		if keycode == -1:
+			continue
+		var event = InputEventKey.new()
+		event.keycode = keycode
+		InputMap.action_erase_events(action_name)
+		InputMap.action_add_event(action_name, event)
+
+func _save_keybinds():
+	for key in ACTIONS:
+		var action_name = ACTIONS[key]
+		var events = InputMap.action_get_events(action_name)
+		if events.size() > 0 and events[0] is InputEventKey:
+			GameState.keybinds[action_name] = events[0].keycode
+	SaveManeger.save_settings()
+
 func _get_button(action: String) -> Button:
 	match action:
 		"direita": return direita_button
@@ -31,6 +57,7 @@ func _get_button(action: String) -> Button:
 		"travar": return travar_button
 		"pausar": return pausar_button
 		_: return null
+
 func _update_button_label(action: String):
 	var action_name = ACTIONS[action]
 	var events = InputMap.action_get_events(action_name)
@@ -45,15 +72,18 @@ func _update_button_label(action: String):
 	var btn = _get_button(action)
 	if btn:
 		btn.text = label_text
+
 func _update_button_labels():
 	for action in ACTIONS.keys():
 		_update_button_label(action)
+
 func _on_rebind_button_pressed(action: String):
 	waiting_for_input = action
 	var btn = _get_button(action)
 	if btn:
 		btn.text = "..."
 	set_process_input(true)
+
 func _input(event):
 	if waiting_for_input == "":
 		return
@@ -63,6 +93,7 @@ func _input(event):
 		InputMap.action_erase_events(action_name)
 		InputMap.action_add_event(action_name, event)
 		_update_button_label(action)
+		_save_keybinds()
 		waiting_for_input = ""
 		set_process_input(false)
 		get_viewport().set_input_as_handled()
