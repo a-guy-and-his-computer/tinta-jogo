@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778288936
+::res://::1778359487
 README.md::TextFile::-1::1771274788::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1771272811
 ::res://Assets/Imagens/::1778274840
@@ -54,30 +54,45 @@ jogar_3.png::CompressedTexture2D::5994146210232033505::1778089948::1778090141::1
 saida_2.png::CompressedTexture2D::1618076078101530650::1778089948::1778090141::1::::<><><>0<>0<>ce2ec79d480483605d75db2c2ae5250c<>res://.godot/imported/saida_2.png-ce6ce5a5da63fa9db0a0dd237711d65b.ctex::
 saida_3.png::CompressedTexture2D::3166201166278434570::1778089948::1778090141::1::::<><><>0<>0<>f08ebcf01963fd88290b51e66cc8f012<>res://.godot/imported/saida_3.png-e379c73734d87b84e1cfc35d44448b23.ctex::
 ::res://Assets/Imagens/VanGogh/::1778022843
-::res://Assets/Imagens/VanGogh/Girassol/::1778027858
+::res://Assets/Imagens/VanGogh/Girassol/::1778290468
+arvoreGirassol.png::CompressedTexture2D::2496253738961923226::1778290467::1778290468::1::::<><><>0<>0<>c674c518f776f759029f3a6917f6639f<>res://.godot/imported/arvoreGirassol.png-b4ca5460c1b0ce94efbe6cf6be54c90a.ctex::
+ceuGirassol.png::CompressedTexture2D::214772275716033992::1778290467::1778290468::1::::<><><>0<>0<>185d0ddb4ae4718e315685b21f56b5a6<>res://.godot/imported/ceuGirassol.png-ab5ec652fffc5b91bb651ae43de0a159.ctex::
 Ceul.png::CompressedTexture2D::5872362970821207820::1778089946::1778090152::1::::<><><>0<>0<>e82fc4cdc0f313f6f18cc74a3d98412d<>res://.godot/imported/Ceul.png-2a01ac47edeb814dc9ca55ae84b8f70f.ctex::
 ceu_final.png::CompressedTexture2D::6536700443914171424::1778089948::1778090152::1::::<><><>0<>0<>164e4c8be2273cd90808de106f935e3a<>res://.godot/imported/ceu_final.png-294eb5bfb36adc4211262883e6948675.ctex::
 Girasol_move.png::CompressedTexture2D::7635953523389327356::1778089946::1778090371::1::::<><><>0<>0<>ed76baded42aebcfdd7e3153de703c2c<>res://.godot/imported/Girasol_move.png-77b99f06e6d1f906f8523978a6103425.ctex::
 girassol (2).png::CompressedTexture2D::1982814532591200298::1778089948::1778090371::1::::<><><>0<>0<>27dccabc7f47a82e6a5fd4edd8d79547<>res://.godot/imported/girassol (2).png-c5acaa8056b58f191e047522563068e3.ctex::
 gira_final.png::CompressedTexture2D::2254548311242058588::1778089948::1778090371::1::::<><><>0<>0<>a041220c5b6d788d75d480fffcc4cb08<>res://.godot/imported/gira_final.png-d7c705a7385ea6ebab758c28a27840ae.ctex::
 montanhaArvore.png::CompressedTexture2D::5179188350192657711::1778027857::1778027858::1::::<><><>0<>0<>d58a50468207b97aa8e6581242969ba9<>res://.godot/imported/montanhaArvore.png-2d6f499c97af8a0371bae23380d3dddb.ctex::
+montanhaGirassol.png::CompressedTexture2D::5288857589557801256::1778290467::1778290468::1::::<><><>0<>0<>7157b773ffe70d3b332eae5b7293cbc2<>res://.godot/imported/montanhaGirassol.png-88e8261dbf073b21eb3d0051c8860565.ctex::
 sol.png::CompressedTexture2D::5458927347969040064::1778090806::1778090807::1::::<><><>0<>0<>7fdea812efdc0243099ece882c54b2ae<>res://.godot/imported/sol.png-e578e193b7436c8ec8b470eb57501fa5.ctex::
-::res://Assets/Imagens/VanGogh/Noite/::1778185526
+::res://Assets/Imagens/VanGogh/Noite/::1778341066
 ceu.png::CompressedTexture2D::4447040132100743799::1778090828::1778090828::1::::<><><>0<>0<>51979a91313a5fbae95779adadede438<>res://.godot/imported/ceu.png-623d1f0bfda78318fef1e74a9a6222d5.ctex::
 chao.png::CompressedTexture2D::4092506190098445281::1778090828::1778090828::1::::<><><>0<>0<>5039de20cc9833d2ef31a998be168a6b<>res://.godot/imported/chao.png-ea1e6586aec5d54a5d0aa6784dcb2cf8.ctex::
+cidade.png::CompressedTexture2D::893973755271008050::1778341000::1778341001::1::::<><><>0<>0<>c243200920951d1a7f05b4babbace0d4<>res://.godot/imported/cidade.png-a0d7c6abd2b535184b72ac68a549fb4e.ctex::
 lua.png::CompressedTexture2D::782822282054349032::1778090828::1778090828::1::::<><><>0<>0<>6293ac476c43dd8069d49b23df8f149a<>res://.godot/imported/lua.png-bdac2c450d6a9ba343fac42aa86396d7.ctex::
+moita.png::CompressedTexture2D::5015538091622526929::1778341065::1778341066::1::::<><><>0<>0<>ed2a096001ef9984125ab6f1f4d5932d<>res://.godot/imported/moita.png-dc90649f2aa5a7e6f4e15513659ebd67.ctex::
 montanha.png::CompressedTexture2D::2699357329001932725::1778185525::1778185526::1::::<><><>0<>0<>b363e672e1d3cd068e802ce3c7717505<>res://.godot/imported/montanha.png-c1ba7912789d36e72b5f8cdfcc802899.ctex::
+montanhas.png::CompressedTexture2D::8918856486564676933::1778341065::1778341066::1::::<><><>0<>0<>bb1766fa5ceb2839f703a5b8a3230610<>res://.godot/imported/montanhas.png-0f121dd763b9a8990338cefa4fdbfcb4.ctex::
 noite_estrelada.png::CompressedTexture2D::7724305012032456866::1778090828::1778090828::1::::<><><>0<>0<>73d37fd71a97349b1bacc87e1d67fc80<>res://.godot/imported/noite_estrelada.png-809f85501aaec3e009d0018d986b7d06.ctex::
 ::res://Assets/Musica/::1771272811
-::res://Scenes/::1778279352
+::res://Fonts/::1778289627
+Fredoka-Regular.ttf::FontFile::6449178940475595834::1778289216::1778289627::1::::<><><>0<>0<>40a5446efc24a3b695b74c8bdc78e3a0<>res://.godot/imported/Fredoka-Regular.ttf-143660bcd70d066a11853ce26b191af0.fontdata::
+Quicksand-Regular.ttf::FontFile::6899109092244595319::1778289216::1778289627::1::::<><><>0<>0<>ea46af4f870caaad6d201409f6e79013<>res://.godot/imported/Quicksand-Regular.ttf-59c660c8d045eaaa9b49768e081a9c06.fontdata::
+::res://Fonts/Licença_fontes/::1778289592
+::res://Fonts/Licença_fontes/Fredoka/::1778289590
+OFL.txt::TextFile::-1::1778289216::0::1::::<><><>0<>0<><>::
+::res://Fonts/Licença_fontes/Quicksand/::1778289592
+OFL.txt::TextFile::-1::1778289216::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1778359066
 camera.tscn::PackedScene::2563785887503928732::1777744674::0::1::::<><><>0<>0<><>::uid://dkyow2q5wp7sn::::res://Scripts/camera.gd
 menu.tscn::PackedScene::5546124509388941826::1778096057::0::1::::<><><>0<>0<><>::uid://b83bn25ce3v5o::::res://Scripts/menu.gd<>uid://dc4u7fpflp5vt::::res://Assets/Imagens/Menus/image.png<>uid://cu67u7pcij3k0::::res://Assets/Imagens/Menus/jogar_2.png<>uid://xb2qg7na1yy1::::res://Assets/Imagens/Menus/saida_2.png<>uid://cyuumt8nahl1w::::res://Assets/Imagens/Menus/celo_controles_1.png<>uid://imky4csntnbd::::res://Assets/Imagens/Menus/celo_video_1.png<>uid://cc3lia12cwd55::::res://Assets/Imagens/Menus/celo_musica111.png<>uid://cooyt8qwt0u2y::::res://Assets/Imagens/Menus/celo_noite_estrelada_1.png<>uid://dglfwj2e052ja::::res://Assets/Imagens/Menus/celo_dali_1.png
 obstaculo_hor.tscn::PackedScene::6496389924150725894::1778089959::0::1::::<><><>0<>0<><>::uid://djq5r6xikm8u::::res://Assets/Imagens/rabisco obistaculo1.png<>uid://bdacaoksnjfsw::::res://Scripts/obstaculo_hor.gd
 obstaculo_ver.tscn::PackedScene::7171326597912378680::1778089959::0::1::::<><><>0<>0<><>::uid://dphnyckqpwdrx::::res://Assets/Imagens/rabisco obistaculo2.png<>uid://dxn3v07gax1oh::::res://Scripts/obstaculo_ver.gd
 pausar.tscn::PackedScene::7252037019035529858::1775346570::0::1::::<><><>0<>0<><>::
-player.tscn::PackedScene::6777906534730535306::1778276961::0::1::::<><><>0<>0<><>::uid://c20g6lulfpgnk::::res://Scripts/player.gd<>uid://b2ca0fifitcg4::::res://Shaders/shader_geral.gdshader<>uid://uoqjg6y48731::::res://Assets/Imagens/bolinha andando anime-Sheet.png<>uid://cvgvxxda8s764::::res://Assets/Imagens/bolinha parada anime-Sheet.png<>uid://b7bun4n62uifj::::res://Assets/Imagens/bolinha andando parede anima-Sheet.png<>uid://dlhmsmc86rhv0::::res://Assets/Imagens/bolinha pulando anime-Sheet.png<>uid://wdlgcv0gxiec::::res://Assets/Imagens/bolinha parada parede anima (1)-Sheet.png
+player.tscn::PackedScene::6777906534730535306::1778357592::0::1::::<><><>0<>0<><>::uid://c20g6lulfpgnk::::res://Scripts/player.gd<>uid://b2ca0fifitcg4::::res://Shaders/shader_geral.gdshader<>uid://uoqjg6y48731::::res://Assets/Imagens/bolinha andando anime-Sheet.png<>uid://cvgvxxda8s764::::res://Assets/Imagens/bolinha parada anime-Sheet.png<>uid://b7bun4n62uifj::::res://Assets/Imagens/bolinha andando parede anima-Sheet.png<>uid://dlhmsmc86rhv0::::res://Assets/Imagens/bolinha pulando anime-Sheet.png<>uid://wdlgcv0gxiec::::res://Assets/Imagens/bolinha parada parede anima (1)-Sheet.png
+tela_creditos.tscn::PackedScene::2205500258051480483::1778289216::0::1::::<><><>0<>0<><>::uid://bin7whlhnajf3::::res://Scripts/tela_creditos.gd
 tela_pausa.tscn::PackedScene::1983783243710854643::1778246500::0::1::::<><><>0<>0<><>::uid://y5ipba4q76ab::::res://Scripts/tela_pausa.gd
-van_gogh.tscn::PackedScene::2225139109433068709::1778279352::0::1::::<><><>0<>0<><>::uid://c3tjeox1cjs71::::res://Scenes/player.tscn<>uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://bf4tl3qcsw81n::::res://Assets/Imagens/grama tine set.png<>uid://y03ftrgwqhh0::::res://Assets/Imagens/pedra tine set.png<>uid://bfu0b8pbb52fm::::res://Assets/Imagens/terra tine setss (1).png<>uid://be40kliqqhkg6::::res://Shaders/background.gdshader<>uid://cpwu7v7naef61::::res://Assets/Imagens/VanGogh/Girassol/Ceul.png<>uid://c0eorbqumvoaa::::res://Assets/Imagens/VanGogh/Girassol/ceu_final.png<>uid://cj1l0awkuedau::::res://Assets/Imagens/VanGogh/Girassol/sol.png<>uid://d1fpe4yuw77y5::::res://Shaders/luz_do_sol.gdshader<>uid://cjw65rnl8jk31::::res://Shaders/icon.svg<>uid://b8grvxc3sk73i::::res://Shaders/brilho.png<>uid://7eec08eeni33::::res://Assets/Imagens/VanGogh/Girassol/gira_final.png<>uid://b4mgdpbyycnk6::::res://Assets/Imagens/VanGogh/Noite/ceu.png<>uid://b2ca0fifitcg4::::res://Shaders/shader_geral.gdshader<>uid://lfg76ynkyjnk::::res://Assets/Imagens/VanGogh/Noite/lua.png<>uid://byko8j0y0gsij::::res://Assets/Imagens/VanGogh/Noite/chao.png<>uid://cge5puttavi24::::res://Shaders/Blur/blur_atras.gdshader<>uid://imky4csntnbd::::res://Assets/Imagens/Menus/celo_video_1.png<>uid://bepuaycux07dx::::res://Assets/Imagens/VanGogh/Noite/montanha.png<>uid://bcr6gc6fkjwdw::::res://Scenes/camera.tscn<>uid://duvouwcs2iq5m::::res://Assets/Imagens/luz.png<>uid://c57gqm80u1r8q::::res://Shaders/tela.gdshader<>uid://3i7vc66vs4s2::::res://Scenes/tela_pausa.tscn<>uid://bxg0c43v10j5u::::res://Scripts/checkpoint.gd<>uid://buinebehiap4g::::res://Scripts/zona_da_morte.gd
+van_gogh.tscn::PackedScene::2225139109433068709::1778359066::0::1::::<><><>0<>0<><>::uid://c3tjeox1cjs71::::res://Scenes/player.tscn<>uid://cyec8wipu6w2c::::res://Scripts/inversao_cores.gd<>uid://yb1ehn30mo8j::::res://Scenes/Porta/porta_magica.tscn<>uid://ugor6md6osde::::res://Assets/Imagens/parku socorro.png<>uid://j5c8021bv18a::::res://Scenes/Porta/porta_magica.gd<>uid://bf4tl3qcsw81n::::res://Assets/Imagens/grama tine set.png<>uid://bkytkbxjrs0lx::::res://Scenes/Porta/spawn_point.tscn<>uid://y03ftrgwqhh0::::res://Assets/Imagens/pedra tine set.png<>uid://bfu0b8pbb52fm::::res://Assets/Imagens/terra tine setss (1).png<>uid://chl7yg3ejb75u::::res://Assets/Imagens/VanGogh/Girassol/montanhaGirassol.png<>uid://bue0lj1s6cjhy::::res://Shaders/azulagem.gdshader<>uid://dcbjd2tjvkce::::res://Assets/Imagens/VanGogh/Girassol/ceuGirassol.png<>uid://cj1l0awkuedau::::res://Assets/Imagens/VanGogh/Girassol/sol.png<>uid://d1fpe4yuw77y5::::res://Shaders/luz_do_sol.gdshader<>uid://cjw65rnl8jk31::::res://Shaders/icon.svg<>uid://b8grvxc3sk73i::::res://Shaders/brilho.png<>uid://7eec08eeni33::::res://Assets/Imagens/VanGogh/Girassol/gira_final.png<>uid://bbtg61eu5wqjy::::res://Assets/Imagens/VanGogh/Girassol/arvoreGirassol.png<>uid://b4mgdpbyycnk6::::res://Assets/Imagens/VanGogh/Noite/ceu.png<>uid://b2ca0fifitcg4::::res://Shaders/shader_geral.gdshader<>uid://lfg76ynkyjnk::::res://Assets/Imagens/VanGogh/Noite/lua.png<>uid://cge5puttavi24::::res://Shaders/Blur/blur_atras.gdshader<>uid://d0cmi7lwq0j38::::res://Assets/Imagens/VanGogh/Noite/montanhas.png<>uid://imky4csntnbd::::res://Assets/Imagens/Menus/celo_video_1.png<>uid://bepuaycux07dx::::res://Assets/Imagens/VanGogh/Noite/montanha.png<>uid://bcr6gc6fkjwdw::::res://Scenes/camera.tscn<>uid://cdptgduuh361r::::res://Assets/Imagens/VanGogh/Noite/moita.png<>uid://duvouwcs2iq5m::::res://Assets/Imagens/luz.png<>uid://c57gqm80u1r8q::::res://Shaders/tela.gdshader<>uid://m0bu8n843v3w::::res://Assets/Imagens/VanGogh/Noite/cidade.png<>uid://3i7vc66vs4s2::::res://Scenes/tela_pausa.tscn<>uid://bxg0c43v10j5u::::res://Scripts/checkpoint.gd<>uid://buinebehiap4g::::res://Scripts/zona_da_morte.gd
 ::res://Scenes/Espinhos/::1778094197
 espinhos_3_hor.tscn::PackedScene::5229354022625699677::1778090539::0::1::::<><><>0<>0<><>::uid://c1mfpwx8umt4l::::res://Scripts/Espinhos/espinhos3h.gd<>uid://ce6m2638eqyx1::::res://Assets/Imagens/espinhos3h.png
 espinhos_3_ver_d.tscn::PackedScene::1216035281781277355::1778090539::0::1::::<><><>0<>0<><>::uid://82m31m88363r::::res://Scripts/Espinhos/espinhos_3_ver_d.gd<>uid://dxugmlipnj66p::::res://Assets/Imagens/espinhosdi.png
@@ -86,14 +101,20 @@ espinhos_4_ver_d.tscn::PackedScene::201028421514127274::1778090539::0::1::::<><>
 espinho_3_ver_e.tscn::PackedScene::5283930092054667833::1778090539::0::1::::<><><>0<>0<><>::uid://2rbktd044xyk::::res://Scripts/Espinhos/espinho_3_ver_e.gd<>uid://blpol6jlogcbi::::res://Assets/Imagens/espinhoses.png
 espinho_4_ver_e.tscn::PackedScene::3623568980106561316::1778090539::0::1::::<><><>0<>0<><>::uid://cht5atapj45cr::::res://Scripts/Espinhos/espinho_4_ver_e.gd<>uid://tawbsb7qjerw::::res://Assets/Imagens/espinhos4ve.png
 muitos_espinhos.tscn::PackedScene::5723055789845925486::1778090539::0::1::::<><><>0<>0<><>::uid://dclpjprpot1of::::res://Scripts/Espinhos/muitos_espinhos.gd<>uid://cpay85sg24i0::::res://Assets/Imagens/espinhos2.PNG
-::res://Scripts/::1778279401
+::res://Scenes/Porta/::1778357705
+porta_magica.gd::GDScript::693812646525465986::1778357705::0::1::::<>Area2D<><>0<>0<><>::
+porta_magica.tscn::PackedScene::1688182799106382291::1778356057::0::1::::<><><>0<>0<><>::uid://cjw65rnl8jk31::::res://Shaders/icon.svg
+spawn_point.tscn::PackedScene::3139025755458696305::1778354384::0::1::::<><><>0<>0<><>::
+::res://Scripts/::1778359032
 camera.gd::GDScript::7911586323162113673::1777744674::0::1::::<>Camera2D<><>0<>0<><>::
-checkpoint.gd::GDScript::4014673417720736444::1778279352::0::1::::<>Area2D<><>0<>0<><>::
+checkpoint.gd::GDScript::4014673417720736444::1778339328::0::1::::<>Area2D<><>0<>0<><>::
+inversao_cores.gd::GDScript::6465812659481254280::1778359032::0::1::::<>Node2D<><>0<>0<><>::
 menu.gd::GDScript::4760540497747301950::1778096151::0::1::::<>Control<><>0<>0<><>::
 NAO_APAGUE_codigo_que_pode_ser_util_depois.gd::GDScript::4864810453601848192::1778278516::0::1::::<>Node<><>0<>0<><>::
 obstaculo_hor.gd::GDScript::2597109400203247462::1778089959::0::1::::<>Area2D<><>0<>0<><>::
 obstaculo_ver.gd::GDScript::8802181305817330883::1778089959::0::1::::<>Area2D<><>0<>0<><>::
-player.gd::GDScript::6719969860192229636::1778279247::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.gd::GDScript::6719969860192229636::1778359024::0::1::::<>CharacterBody2D<><>0<>0<><>::
+tela_creditos.gd::GDScript::2976750959826302298::1778289216::0::1::::<>ScrollContainer<><>0<>0<><>::
 tela_pausa.gd::GDScript::1746976156648928029::1778247069::0::1::::<>CanvasLayer<><>0<>0<><>::
 zona_da_morte.gd::GDScript::3807509101599135356::1778279401::0::1::::<>Area2D<><>0<>0<><>::
 ::res://Scripts/Espinhos/::1778094197
@@ -104,14 +125,15 @@ espinhos_4_ver_d.gd::GDScript::5670058293564126731::1778089959::0::1::::<>Area2D
 espinho_3_ver_e.gd::GDScript::1930272778731578542::1778089959::0::1::::<>Area2D<><>0<>0<><>::
 espinho_4_ver_e.gd::GDScript::5305208958600944165::1778089959::0::1::::<>Area2D<><>0<>0<><>::
 muitos_espinhos.gd::GDScript::7323275535499611105::1778089959::0::1::::<>Area2D<><>0<>0<><>::
-::res://Shaders/::1778247430
+::res://Shaders/::1778357171
+azulagem.gdshader::Shader::3799993149756522730::1778351674::0::1::::<><><>0<>0<><>::
 background.gdshader::Shader::2728579386735096651::1778095057::0::1::::<><><>0<>0<><>::
 brilho.png::CompressedTexture2D::4716109693244900144::1778090641::1778090642::1::::<><><>0<>0<>9d729d2211f34fdd5647052ce56edc34<>res://.godot/imported/brilho.png-e604e956ef744eb18059d0e571f72103.ctex::
 icon.svg::CompressedTexture2D::5451893984834380786::1778090629::1778090630::1::::<><><>0<>0<>9224bae8fe5a8a7b19a78029438186e5<>res://.godot/imported/icon.svg-d173005b9acea9992b97670e565f6fee.ctex::
 jogo_camera.gdshader::Shader::7393650082529752429::1772311396::0::1::::<><><>0<>0<><>::
-luz_do_sol.gdshader::Shader::8995413333697424174::1778095057::0::1::::<><><>0<>0<><>::
-shader_geral.gdshader::Shader::4285693137489520553::1778247430::0::1::::<><><>0<>0<><>::
-tela.gdshader::Shader::6944960321738566054::1778178857::0::1::::<><><>0<>0<><>::
+luz_do_sol.gdshader::Shader::8995413333697424174::1778357171::0::1::::<><><>0<>0<><>::
+shader_geral.gdshader::Shader::4285693137489520553::1778351674::0::1::::<><><>0<>0<><>::
+tela.gdshader::Shader::6944960321738566054::1778351674::0::1::::<><><>0<>0<><>::
 ::res://Shaders/Blur/::1777148711
 blur_3por3.gdshader::Shader::2831655496721389279::1777148711::0::1::::<><><>0<>0<><>::
 blur_atras.gdshader::Shader::5204081317604598299::1777148711::0::1::::<><><>0<>0<><>::

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://yb1ehn30mo8j"]
+
+[ext_resource type="Texture2D" uid="uid://cjw65rnl8jk31" path="res://Shaders/icon.svg" id="1_eyshw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nyiy"]
+size = Vector2(20, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0nyiy"]
+
+[node name="PortaMagica" type="Area2D" unique_id=1564465152]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1005362341]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_0nyiy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=586137708]
+sprite_frames = SubResource("SpriteFrames_0nyiy")
+
+[node name="RemoverQuandoTiverAnimacao" type="Sprite2D" parent="." unique_id=994863962]
+position = Vector2(9.536743e-07, -16.875)
+scale = Vector2(0.15234375, 0.2675781)
+texture = ExtResource("1_eyshw")

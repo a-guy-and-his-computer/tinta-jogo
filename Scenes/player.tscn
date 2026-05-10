@@ -10,16 +10,22 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8erm5"]
 shader = ExtResource("2_3smsa")
-shader_parameter/nitidez_ligado = true
+shader_parameter/nitidez_ligado = false
 shader_parameter/tamanho_tela_px = Vector2(640, 360)
 shader_parameter/quant_nitidez = 0.362
 shader_parameter/grading_ligado = false
 shader_parameter/brilho = 0.0
 shader_parameter/contraste = 1.0
 shader_parameter/saturacao = 1.0
-shader_parameter/noite_ligada = true
+shader_parameter/noite_ligada = false
 shader_parameter/intens_noite = 0.7670000364325
 shader_parameter/cor_noite = Color(0.10980392, 0.105882354, 0.5372549, 0.6627451)
+shader_parameter/azul_dia_ligado = false
+shader_parameter/azul_noite_ligado = false
+shader_parameter/intens_azul_dia = 0.5
+shader_parameter/intens_azul_noite = 0.5
+shader_parameter/azulagem_dia = Color(0.65, 0.8, 1, 1)
+shader_parameter/azulagem_noite = Color(0.05, 0.1, 0.2, 1)
 shader_parameter/inversao_ligada = false
 shader_parameter/vignette_ligado = false
 shader_parameter/intensidade = 0.0

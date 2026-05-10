@@ -1,16 +1,22 @@
 shader_type canvas_item;
 
+group_uniforms Intensidade;
 uniform float intens_geral: hint_range(0.0, 1.0) = 1.0;
 
+group_uniforms Raios;
 uniform float quant_raios: hint_range(2.0, 16.0, 1.0) = 7.0;
 uniform float tmnho_raio: hint_range(0.0, 1.0)  = 0.45;
 uniform float veloc_raio: hint_range(0.0, 1.0)  = 0.04;
 uniform float intens_raio: hint_range(0.0, 2.0)  = 0.9;
 
+group_uniforms Circulo;
 uniform float circulo: hint_range(0.0, 0.5)  = 0.257;
+
+group_uniforms Brilho;
 uniform float tmnho_brilho: hint_range(1.0, 20.0) = 5.0;
 uniform float intens_brilho: hint_range(0.0, 3.0) = 1.4;
 
+group_uniforms Cor;
 uniform vec4 cor_raio: source_color = vec4(1.0, 0.97, 0.80, 1.0);
 
 void fragment() {

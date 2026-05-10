@@ -1,1 +1,9 @@
-res://Scripts/player.gd
+res://Scenes/player.tscn
+res://Shaders/shader_geral.gdshader
+res://Shaders/azulagem.gdshader
+res://Shaders/luz_do_sol.gdshader
+res://Shaders/tela.gdshader
+res://Scenes/van_gogh.tscn
+res://Shaders/inversao_cor.gdshader
+res://Scripts/inversao_cores.gd
+res://Shaders/cor_imutavel.gdshader

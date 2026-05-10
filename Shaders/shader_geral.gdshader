@@ -14,7 +14,15 @@ uniform float saturacao: hint_range(0.0, 3.0)  = 1.0;
 group_uniforms Noite;
 uniform bool noite_ligada;
 uniform float intens_noite: hint_range(0.0, 1.0) = 0.0;
-uniform vec4 cor_noite: source_color;
+uniform vec4 cor_noite: source_color = vec4(0.1, 0.1, 0.53, 0.66);
+
+group_uniforms Azulagem;
+uniform bool azul_dia_ligado;
+uniform bool azul_noite_ligado;
+uniform float intens_azul_dia = 0.5;
+uniform float intens_azul_noite = 0.5;
+uniform vec4 azulagem_dia: source_color = vec4(0.65, 0.8, 1.0, 1.0);
+uniform vec4 azulagem_noite: source_color = vec4(0.05, 0.1, 0.2, 1.0);
 
 group_uniforms Inversao_De_Cores;
 uniform bool inversao_ligada;
@@ -84,6 +92,18 @@ vec4 noite(vec4 cor){
 	return cor;
 }
 
+vec4 azulagem(vec4 cor){
+	if (azul_dia_ligado == true){
+		cor.rgb = mix(cor.rgb, azulagem_dia.rgb, intens_azul_dia * 0.1);
+	}
+	
+	else if (azul_dia_ligado == false && azul_noite_ligado == true){
+		cor.rgb = mix(cor.rgb, azulagem_noite.rgb, intens_azul_noite * 0.1);
+	}
+	
+	return cor;
+}
+
 vec4 vignette(vec4 cor, vec2 uv){
 	if (vignette_ligado == false){
 		return cor;
@@ -110,7 +130,8 @@ void fragment() {
 		cor = 1. - cor;
 	}
 	
-	vec4 cor_final = noite(vec4(cor, alpha));
+	vec4 cor_com_alpha = noite(vec4(cor, alpha));
+	vec4 cor_final = azulagem(cor_com_alpha);
 	cor_final = vignette(cor_final, UV);
 	
 	COLOR = vec4(cor_final.rgb, cor_final.a);
