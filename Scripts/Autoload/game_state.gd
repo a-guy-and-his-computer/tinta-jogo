@@ -5,6 +5,9 @@ var fullscreen: bool = true
 var master_volume: float = 100.0
 var keybinds: Dictionary = {}
 
+var abrir_aba: String = ""
+var origem: String = ""
+
 # --- progresso do jogo (adicione mais conforme precisar) ---
 var current_scene: String = ""
 

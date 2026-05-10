@@ -1,10 +1,7 @@
-res://Scenes/configuracoes.tscn
+res://Scenes/menu.tscn
 res://Shaders/luz_do_sol.gdshader
 res://Shaders/tela.gdshader
 res://Shaders/background.gdshader
-res://Scripts/teclas_tela.gd
-res://Scripts/tela_pausa.gd
-res://Scripts/video_tela.gd
-res://Scripts/volume_tela.gd
 res://Scripts/Autoload/game_state.gd
-res://Scripts/Autoload/save_meneger.gd
+res://Scripts/menu.gd
+res://Scripts/configuracoes.gd

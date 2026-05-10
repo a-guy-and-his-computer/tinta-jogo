@@ -15,15 +15,21 @@ func _on_sair_pressed() -> void: # Sair
 
 
 func _on_controles_botao_pressed() -> void: # Controles
-	pass # Trocar com o menu dos controles
+	GameState.abrir_aba = "controles"
+	GameState.origem = "menu"
+	get_tree().change_scene_to_file("res://Scenes/configuracoes.tscn")
 
 
 func _on_display_botao_pressed() -> void: # Display
-	pass # Trocar com o menu da tela
+	GameState.abrir_aba = "video"
+	GameState.origem = "menu"
+	get_tree().change_scene_to_file("res://Scenes/configuracoes.tscn")
 
 
 func _on_som_botao_pressed() -> void: # Som
-	pass # Trocar com o menu do som/música
+	GameState.abrir_aba = "volume"
+	GameState.origem = "menu"
+	get_tree().change_scene_to_file("res://Scenes/configuracoes.tscn")
 
 
 func _on_jogar_mouse_entered() -> void:
