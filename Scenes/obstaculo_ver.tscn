@@ -2,19 +2,52 @@
 
 [ext_resource type="Texture2D" uid="uid://dphnyckqpwdrx" path="res://Assets/Imagens/rabisco obistaculo2.png" id="1_l2mco"]
 [ext_resource type="Script" uid="uid://dxn3v07gax1oh" path="res://Scripts/obstaculo_ver.gd" id="1_pmfoo"]
+[ext_resource type="Texture2D" uid="uid://djq5r6xikm8u" path="res://Assets/Imagens/rabisco obistaculo1.png" id="2_ajpig"]
+[ext_resource type="Texture2D" uid="uid://c63iw4sw0s2ln" path="res://Assets/Imagens/rabisco obistaculo3.png" id="4_f03c7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmfoo"]
-size = Vector2(26, 18)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jminv"]
+size = Vector2(27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc3dk"]
+atlas = ExtResource("2_ajpig")
+region = Rect2(1, 40, 48, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evxu2"]
+atlas = ExtResource("1_l2mco")
+region = Rect2(1, 40, 48, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78a5v"]
+atlas = ExtResource("4_f03c7")
+region = Rect2(1, 40, 48, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2mdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc3dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evxu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78a5v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="obstaculo_ver" type="Area2D" unique_id=977309680]
 script = ExtResource("1_pmfoo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=543069642]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_pmfoo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283542356]
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_jminv")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168284098]
-position = Vector2(4, -19)
-texture = ExtResource("1_l2mco")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=514767649]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_f2mdj")
+autoplay = "default"
+frame_progress = 0.07210382
 
 [connection signal="body_entered" from="." to="." method="_on_obstaculo_ver_body_entered"]

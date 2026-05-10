@@ -32,8 +32,8 @@
 [ext_resource type="Shader" uid="uid://c57gqm80u1r8q" path="res://Shaders/tela.gdshader" id="20_jxon8"]
 [ext_resource type="Texture2D" uid="uid://m0bu8n843v3w" path="res://Assets/Imagens/VanGogh/Noite/cidade.png" id="20_ofla7"]
 [ext_resource type="PackedScene" uid="uid://3i7vc66vs4s2" path="res://Scenes/tela_pausa.tscn" id="21_or7qc"]
-[ext_resource type="Script" uid="uid://bxg0c43v10j5u" path="res://Scripts/checkpoint.gd" id="22_6idp7"]
-[ext_resource type="Script" uid="uid://buinebehiap4g" path="res://Scripts/zona_da_morte.gd" id="23_glqb3"]
+[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="22_6idp7"]
+[ext_resource type="Script" path="res://Scripts/zona_da_morte.gd" id="23_glqb3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7ojk"]
 shader = ExtResource("11_x2wak")
