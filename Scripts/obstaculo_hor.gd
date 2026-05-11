@@ -3,7 +3,7 @@ extends Area2D
 var speed = 100
 var direction = 1
 var posicao_inicial = 0.0
-@export var distancia = 50.0 
+@export var distancia = 100.0 
 
 func _ready() -> void:
 	posicao_inicial = position.x
