@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7nvou2tbwyrh"
-path="res://.godot/imported/tinta menu.png-d0bbac0980539ac994c0c747dc27fb6c.ctex"
+uid="uid://bhexuwxcd2equ"
+path="res://.godot/imported/tintaN.png-a76047d805c383f30b0a4b46c28470e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagens/Menus/tinta menu.png"
-dest_files=["res://.godot/imported/tinta menu.png-d0bbac0980539ac994c0c747dc27fb6c.ctex"]
+source_file="res://Assets/Imagens/Menus/tintaN.png"
+dest_files=["res://.godot/imported/tintaN.png-a76047d805c383f30b0a4b46c28470e0.ctex"]
 
 [params]
 
