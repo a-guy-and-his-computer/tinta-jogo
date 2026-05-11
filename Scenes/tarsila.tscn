@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b8grvxc3sk73i" path="res://Shaders/brilho.png" id="10_mcrcd"]
 [ext_resource type="Shader" uid="uid://c57gqm80u1r8q" path="res://Shaders/tela.gdshader" id="11_0ujhy"]
 [ext_resource type="PackedScene" uid="uid://bcr6gc6fkjwdw" path="res://Scenes/camera.tscn" id="11_2h0m6"]
+[ext_resource type="AudioStream" uid="uid://cr7v0gm3y6uc1" path="res://Sounds/AUD-20260509-WA0065.mp3" id="13_mcrcd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_54u5s"]
 shader = ExtResource("2_yjng1")
@@ -332,7 +333,7 @@ shader_parameter/quant_nitidez = 0.362000017195
 shader_parameter/grading_ligado = true
 shader_parameter/brilho = 0.0
 shader_parameter/contraste = 1.0
-shader_parameter/saturacao = 1.5000000712500001
+shader_parameter/saturacao = 1.50000007125
 shader_parameter/inversao_centro = Vector2(0.5, 0.5)
 shader_parameter/raio = 0.0
 shader_parameter/inversao_suavidade = 0.2
@@ -401,3 +402,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2116202831]
+stream = ExtResource("13_mcrcd")

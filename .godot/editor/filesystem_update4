@@ -1,7 +1,11 @@
-res://Scenes/menu.tscn
+res://Scenes/tela_creditos.tscn
 res://Shaders/luz_do_sol.gdshader
 res://Shaders/tela.gdshader
 res://Shaders/background.gdshader
-res://Scripts/Autoload/game_state.gd
+res://Scenes/menu.tscn
 res://Scripts/menu.gd
+res://Scenes/van_gogh.tscn
+res://Scenes/dali.tscn
+res://Scenes/tarsila.tscn
+res://Scenes/configuracoes.tscn
 res://Scripts/configuracoes.gd

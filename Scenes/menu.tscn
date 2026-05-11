@@ -1,17 +1,11 @@
 [gd_scene format=3 uid="uid://clat4iual0f8u"]
 
 [ext_resource type="Script" uid="uid://b83bn25ce3v5o" path="res://Scripts/menu.gd" id="1_1rerr"]
-[ext_resource type="Texture2D" uid="uid://dc4u7fpflp5vt" path="res://Assets/Imagens/Menus/image.png" id="2_xhh6f"]
-[ext_resource type="Texture2D" uid="uid://cu67u7pcij3k0" path="res://Assets/Imagens/Menus/jogar_2.png" id="3_6swd7"]
-[ext_resource type="Texture2D" uid="uid://xb2qg7na1yy1" path="res://Assets/Imagens/Menus/saida_2.png" id="4_7qvly"]
-[ext_resource type="Texture2D" uid="uid://cyuumt8nahl1w" path="res://Assets/Imagens/Menus/celo_controles_1.png" id="5_rfqti"]
-[ext_resource type="Texture2D" uid="uid://imky4csntnbd" path="res://Assets/Imagens/Menus/celo_video_1.png" id="6_g8i7c"]
-[ext_resource type="Texture2D" uid="uid://cc3lia12cwd55" path="res://Assets/Imagens/Menus/celo_musica111.png" id="7_23t3j"]
-[ext_resource type="Texture2D" uid="uid://cooyt8qwt0u2y" path="res://Assets/Imagens/Menus/celo_noite_estrelada_1.png" id="8_8ph6h"]
-[ext_resource type="Texture2D" uid="uid://dglfwj2e052ja" path="res://Assets/Imagens/Menus/celo_dali_1.png" id="9_5ti5v"]
+[ext_resource type="Texture2D" uid="uid://b7nvou2tbwyrh" path="res://Assets/Imagens/Menus/tinta menu.png" id="2_q3rjx"]
+[ext_resource type="AudioStream" uid="uid://itp8wq7rbh5d" path="res://Sounds/Titulo.mp3" id="10_7qvly"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhh6f"]
-texture = ExtResource("2_xhh6f")
+texture = ExtResource("2_q3rjx")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6swd7"]
 
@@ -48,23 +42,20 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_xhh6f")
 
 [node name="CompletouNivelVanGogh" type="Sprite2D" parent="." unique_id=1300761091]
 position = Vector2(422, 283)
-texture = ExtResource("8_8ph6h")
 
 [node name="CompletouNivelDali" type="Sprite2D" parent="." unique_id=1036403959]
 position = Vector2(505, 284)
-texture = ExtResource("9_5ti5v")
 
 [node name="Jogar" type="Node2D" parent="." unique_id=1822001711]
 
 [node name="JogarSprite" type="Sprite2D" parent="Jogar" unique_id=1510551066]
 position = Vector2(133, 164)
-texture = ExtResource("3_6swd7")
 
 [node name="JogarBotao" type="Button" parent="Jogar" unique_id=1620779604]
-offset_left = 61.0
-offset_top = 81.0
-offset_right = 171.0
-offset_bottom = 163.0
+offset_left = 10.0
+offset_top = 98.0
+offset_right = 127.0
+offset_bottom = 188.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6swd7")
@@ -76,13 +67,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 
 [node name="SaidaSprite" type="Sprite2D" parent="Sair" unique_id=837500606]
 position = Vector2(126, 191)
-texture = ExtResource("4_7qvly")
 
 [node name="SairBotao" type="Button" parent="Sair" unique_id=47756543]
-offset_left = 65.0
-offset_top = 174.0
-offset_right = 175.0
-offset_bottom = 256.0
+offset_left = 15.0
+offset_top = 196.0
+offset_right = 134.0
+offset_bottom = 278.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g8i7c")
@@ -94,13 +84,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 
 [node name="ControlesSprite" type="Sprite2D" parent="ControlesConfig" unique_id=1287550011]
 position = Vector2(392, 209)
-texture = ExtResource("5_rfqti")
 
 [node name="ControlesBotao" type="Button" parent="ControlesConfig" unique_id=68902883]
-offset_left = 369.00003
-offset_top = 188.0
-offset_right = 479.00003
-offset_bottom = 270.0
+offset_left = 15.000061
+offset_top = 10.0
+offset_right = 122.24809
+offset_bottom = 100.084274
 scale = Vector2(0.41958752, 0.4773308)
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 13
@@ -113,13 +102,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 
 [node name="DisplaySprite" type="Sprite2D" parent="DisplayConfig" unique_id=279948949]
 position = Vector2(460, 208)
-texture = ExtResource("6_g8i7c")
 
 [node name="DisplayBotao" type="Button" parent="DisplayConfig" unique_id=1126858448]
-offset_left = 439.0
-offset_top = 187.0
-offset_right = 549.0
-offset_bottom = 269.0
+offset_left = 72.0
+offset_top = 6.9999995
+offset_right = 193.18417
+offset_bottom = 103.36923
 scale = Vector2(0.37958753, 0.4773308)
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 13
@@ -132,13 +120,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
 
 [node name="SomSprite" type="Sprite2D" parent="SomConfig" unique_id=1801028212]
 position = Vector2(528, 208)
-texture = ExtResource("7_23t3j")
 
 [node name="SomBotao" type="Button" parent="SomConfig" unique_id=634474212]
-offset_left = 508.0
-offset_top = 189.00002
-offset_right = 618.0
-offset_bottom = 271.0
+offset_left = 130.0
+offset_top = 7.0
+offset_right = 251.18417
+offset_bottom = 101.27425
 scale = Vector2(0.37958753, 0.4773308)
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 13
@@ -146,6 +133,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_6swd7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_7qvly")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_rfqti")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cayip")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1098319559]
+stream = ExtResource("10_7qvly")
+autoplay = true
 
 [connection signal="mouse_entered" from="Jogar/JogarBotao" to="." method="_on_jogar_mouse_entered"]
 [connection signal="mouse_exited" from="Jogar/JogarBotao" to="." method="_on_jogar_mouse_exited"]

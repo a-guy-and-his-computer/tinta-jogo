@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dnxatslrqsgik" path="res://Assets/Imagens/Dali/cenário dali.png" id="7_lj8ji"]
 [ext_resource type="PackedScene" uid="uid://bcr6gc6fkjwdw" path="res://Scenes/camera.tscn" id="11_k2xoi"]
 [ext_resource type="Shader" uid="uid://c57gqm80u1r8q" path="res://Shaders/tela.gdshader" id="11_qrhy4"]
+[ext_resource type="AudioStream" uid="uid://bitdvy4bxiqdb" path="res://Sounds/dali.mp3" id="12_k2xoi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vai6m"]
 
@@ -1932,7 +1933,7 @@ shader_parameter/quant_nitidez = 0.362000017195
 shader_parameter/grading_ligado = true
 shader_parameter/brilho = 0.0
 shader_parameter/contraste = 1.0
-shader_parameter/saturacao = 1.5000000712500001
+shader_parameter/saturacao = 1.50000007125
 shader_parameter/inversao_centro = Vector2(0.5, 0.5)
 shader_parameter/raio = 0.0
 shader_parameter/inversao_suavidade = 0.2
@@ -1989,3 +1990,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1295963949]
+stream = ExtResource("12_k2xoi")
+autoplay = true
